@@ -65,10 +65,29 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    Tesseract *tesseract = [[Tesseract alloc] initWithLanguage:@"eng"];
+    tesseract.delegate = self;
+    // Grab the image you want to preprocess
+    UIImage *inputImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *orientedImage = [self fixImage:inputImage];
+    
+    // Initialize our adaptive threshold filter
+    GPUImageAdaptiveThresholdFilter *stillImageFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
+    stillImageFilter.blurRadiusInPixels = 20.0; // adjust this to tweak the blur radius of the filter, defaults to 4.0
+    
+    // Retrieve the filtered image from the filter
+    UIImage *filteredImage = [stillImageFilter imageByFilteringImage:orientedImage];
+    
+    // Give Tesseract the filtered image
+    tesseract.image = filteredImage;
+    [tesseract recognize];
+    NSLog(@"%@", [tesseract recognizedText]);
+    NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
+
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         
-        _imageView.image = image;
+        _imageView.image = filteredImage;
         
         if (_newMedia)
             UIImageWriteToSavedPhotosAlbum(image,
@@ -76,6 +95,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                            @selector(image:finishedSavingWithError:contextInfo:),
                                            nil);
     }
+}
+
+-(UIImage *) fixImage:(UIImage *)image {
+    if (image.imageOrientation == UIImageOrientationUp) return image;
+    
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
+    [image drawInRect:(CGRect){0, 0, image.size}];
+    UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return normalizedImage;
 }
 
 -(void)image:(UIImage *)image

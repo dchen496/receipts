@@ -72,7 +72,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     // Initialize our adaptive threshold filter
     GPUImageAdaptiveThresholdFilter *stillImageFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
-    stillImageFilter.blurRadiusInPixels = 4.0; // adjust this to tweak the blur radius of the filter, defaults to 4.0
+    stillImageFilter.blurRadiusInPixels = 20.0; // adjust this to tweak the blur radius of the filter, defaults to 4.0
     
     // Retrieve the filtered image from the filter
     UIImage *filteredImage = [stillImageFilter imageByFilteringImage:inputImage];
@@ -81,7 +81,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     tesseract.image = filteredImage;
     [tesseract recognize];
     NSLog(@"%@", [tesseract recognizedText]);
-
+    NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
 
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *image = info[UIImagePickerControllerOriginalImage];

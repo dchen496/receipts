@@ -16,24 +16,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccP-jg-G3g">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7B-fz-OL5">
-                                <rect key="frame" x="0.0" y="467" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="  Camera Roll" id="zqW-mu-WfR">
                                         <connections>
                                             <action selector="useCameraRoll:" destination="vXZ-lx-hvc" id="d2V-K4-EaK"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="    Take Picture!" width="346" id="kDN-kM-IS3">
+                                    <barButtonItem title="    Take Picture!" width="250" id="kDN-kM-IS3">
                                         <connections>
                                             <action selector="useCamera:" destination="vXZ-lx-hvc" id="swi-Ia-jrN"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccP-jg-G3g">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -45,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143.5" y="383.5"/>
+            <point key="canvasLocation" x="225" y="510"/>
         </scene>
     </scenes>
 </document>

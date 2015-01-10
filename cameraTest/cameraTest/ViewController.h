@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-#import <TesseractOCR/TesseractOCR.h>
-#import <GPUIMage.h>
 
-@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate,
-    TesseractDelegate>
+@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 
 @property BOOL newMedia;
@@ -21,6 +18,11 @@
 - (IBAction)useCamera:(id)sender;
 - (IBAction)useCameraRoll:(id)sender;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (strong, nonatomic) IBOutlet UILabel *tableTitle;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITextField *numberOfPeople;
+@property (strong, nonatomic) IBOutlet UIButton *toNameInputButtom;
 
 @end
 

@@ -64,15 +64,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     NSString *mediaType = info[UIImagePickerControllerMediaType];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    Tesseract *tesseract = [[Tesseract alloc] initWithLanguage:@"eng"];
+    tesseract.delegate = self;
+    tesseract.image = [info[UIImagePickerControllerOriginalImage] blackAndWhite];
+    [tesseract recognize];
+    NSLog(@"%@", [tesseract recognizedText]);
 
 
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *image = info[UIImagePickerControllerOriginalImage];
-        Tesseract *tesseract = [[Tesseract alloc] initWithLanguage:@"eng"];
-        tesseract.delegate = self;
-        tesseract.image = [image grayScale];
-        [tesseract recognize];
-        NSLog(@"%@", [tesseract recognizedText]);
         
         _imageView.image = image;
         

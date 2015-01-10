@@ -67,7 +67,18 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     Tesseract *tesseract = [[Tesseract alloc] initWithLanguage:@"eng"];
     tesseract.delegate = self;
-    tesseract.image = [info[UIImagePickerControllerOriginalImage] blackAndWhite];
+    // Grab the image you want to preprocess
+    UIImage *inputImage = info[UIImagePickerControllerOriginalImage];
+    
+    // Initialize our adaptive threshold filter
+    GPUImageAdaptiveThresholdFilter *stillImageFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
+    stillImageFilter.blurRadiusInPixels = 4.0; // adjust this to tweak the blur radius of the filter, defaults to 4.0
+    
+    // Retrieve the filtered image from the filter
+    UIImage *filteredImage = [stillImageFilter imageByFilteringImage:inputImage];
+    
+    // Give Tesseract the filtered image
+    tesseract.image = filteredImage;
     [tesseract recognize];
     NSLog(@"%@", [tesseract recognizedText]);
 

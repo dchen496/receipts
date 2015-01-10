@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <TesseractOCR/TesseractOCR.h>
+#import <GPUIMage.h>
 
 @interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate,
     TesseractDelegate>

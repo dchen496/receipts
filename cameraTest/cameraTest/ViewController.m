@@ -69,13 +69,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     tesseract.delegate = self;
     // Grab the image you want to preprocess
     UIImage *inputImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *orientedImage = [self fixImage:inputImage];
     
     // Initialize our adaptive threshold filter
     GPUImageAdaptiveThresholdFilter *stillImageFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
     stillImageFilter.blurRadiusInPixels = 20.0; // adjust this to tweak the blur radius of the filter, defaults to 4.0
     
     // Retrieve the filtered image from the filter
-    UIImage *filteredImage = [stillImageFilter imageByFilteringImage:inputImage];
+    UIImage *filteredImage = [stillImageFilter imageByFilteringImage:orientedImage];
     
     // Give Tesseract the filtered image
     tesseract.image = filteredImage;
@@ -94,6 +95,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                            @selector(image:finishedSavingWithError:contextInfo:),
                                            nil);
     }
+}
+
+-(UIImage *) fixImage:(UIImage *)image {
+    if (image.imageOrientation == UIImageOrientationUp) return image;
+        
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
+    [image drawInRect:(CGRect){0, 0, image.size}];
+    UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return normalizedImage;
 }
 
 -(void)image:(UIImage *)image

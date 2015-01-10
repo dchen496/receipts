@@ -17,6 +17,7 @@
 		A50F32291A612CEC00048106 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A50F32281A612CEC00048106 /* Images.xcassets */; };
 		A50F322C1A612CEC00048106 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50F322A1A612CEC00048106 /* LaunchScreen.xib */; };
 		A50F32381A612CEC00048106 /* receiptsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F32371A612CEC00048106 /* receiptsTests.m */; };
+		A538765B1A61A4EB00A72FB0 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = A538765A1A61A4EB00A72FB0 /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A50F32311A612CEC00048106 /* receiptsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = receiptsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50F32361A612CEC00048106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A50F32371A612CEC00048106 /* receiptsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = receiptsTests.m; sourceTree = "<group>"; };
+		A538765A1A61A4EB00A72FB0 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		FEB169098E4B3FCC5C23052E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 		A50F320F1A612CEB00048106 = {
 			isa = PBXGroup;
 			children = (
+				A538765A1A61A4EB00A72FB0 /* tessdata */,
 				A50F321A1A612CEB00048106 /* receipts */,
 				A50F32341A612CEC00048106 /* receiptsTests */,
 				A50F32191A612CEB00048106 /* Products */,
@@ -244,6 +247,7 @@
 				A50F32271A612CEC00048106 /* Main.storyboard in Resources */,
 				A50F322C1A612CEC00048106 /* LaunchScreen.xib in Resources */,
 				6FCB393E1A61A1D7005BD185 /* ReceiptDetails.storyboard in Resources */,
+				A538765B1A61A4EB00A72FB0 /* tessdata in Resources */,
 				A50F32291A612CEC00048106 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

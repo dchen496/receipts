@@ -22,13 +22,7 @@
 {
     [super viewDidLoad];
     // Initialize table data
-    NSMutableArray *data = [[NSMutableArray alloc] init];
-    NSArray *cleanReceipt = removeExtraLines(receipt);
-    for(NSArray *entry in cleanReceipt) {
-        NSString *name = [entry objectAtIndex: 0];
-        [data addObject: name];
-    }
-    tableData = [NSArray arrayWithArray: data];
+    tableData = receipt;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -43,10 +37,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[tableData objectAtIndex:indexPath.row] objectAtIndex: 0];
+    double price = [[[tableData objectAtIndex:indexPath.row] objectAtIndex: 1] doubleValue];
+    cell.detailTextLabel.text = [NSString stringWithFormat: @"$%.2f", price];
     return cell;
 }
 

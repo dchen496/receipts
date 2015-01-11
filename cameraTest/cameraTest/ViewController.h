@@ -13,9 +13,17 @@
 
 @interface ViewController : UIViewController <TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+- (IBAction)maxNumber:(id)sender;
 
 @property BOOL newMedia;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *namePrompt;
+@property (strong, nonatomic) IBOutlet UITextField *personName;
+@property (strong, nonatomic) IBOutlet UIButton *enterNextName;
+- (IBAction)finishedEnteringNames:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *finishedNamesButton;
+
+- (IBAction)nextName:(id)sender;
 
 - (IBAction)useCamera:(id)sender;
 - (IBAction)useCameraRoll:(id)sender;

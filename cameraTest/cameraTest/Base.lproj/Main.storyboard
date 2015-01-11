@@ -102,6 +102,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="maxNumber:" destination="ef7-cm-Gsw" eventType="touchUpInside" id="aBg-df-XCr"/>
                                     <segue destination="OYt-Ts-ECC" kind="push" id="88R-Nv-ZGf"/>
                                 </connections>
                             </button>
@@ -128,32 +129,43 @@
         <!--View Controller-->
         <scene sceneID="wyI-XR-pGA">
             <objects>
-                <viewController id="OYt-Ts-ECC" sceneMemberID="viewController">
+                <viewController id="OYt-Ts-ECC" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="blc-3R-EEK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DzQ-D0-c9P">
-                                <rect key="frame" x="144" y="495" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ySB-2o-agr" kind="push" id="EAo-n9-kGC"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter member names:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lTF-fw-sR4">
-                                <rect key="frame" x="48" y="39" width="224" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the name of person 1:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lTF-fw-sR4">
+                                <rect key="frame" x="26" y="124" width="268" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" id="KS4-f7-XJB">
+                                <rect key="frame" x="26" y="197" width="268" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wz5-a6-BPZ">
+                                <rect key="frame" x="144" y="230" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextName:" destination="OYt-Ts-ECC" eventType="touchUpInside" id="zoT-vi-fbm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oNa-76-q4P"/>
+                    <connections>
+                        <outlet property="enterNextName" destination="wz5-a6-BPZ" id="bvT-gu-CHt"/>
+                        <outlet property="namePrompt" destination="lTF-fw-sR4" id="UKs-Bz-TEM"/>
+                        <outlet property="personName" destination="KS4-f7-XJB" id="mFq-Ry-UxX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tP-hf-tFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

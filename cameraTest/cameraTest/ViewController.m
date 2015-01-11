@@ -24,6 +24,44 @@
     // Dispose of any resources that can be recreated.
 }
 
+NSMutableArray *names;
+int current = 1;
+int max = 0;
+
+- (IBAction)maxNumber:(id)sender {
+    max = [_numberOfPeople.text intValue];
+}
+
+- (IBAction)finishedEnteringNames:(id)sender {
+    
+}
+
+- (IBAction)nextName:(id)sender {
+    [self makeNames: current upTo: max];
+    
+}
+
+- (void) makeNames: (int) counter upTo: (int) max {
+    
+    if (counter == max) {
+        [_enterNextName removeTarget:self action:@selector(nextName:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [_enterNextName addTarget: self action: @selector(finishedEnteringNames:) forControlEvents: UIControlEventTouchUpInside];
+        
+        
+        
+    } else {
+        names[counter] = _personName.text;
+        
+        NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",counter + 1];
+        NSMutableString *nameLabel = [NSMutableString stringWithString:@"Please enter the name of person "];
+        [nameLabel appendString: personNumber];
+        _personName.text = [NSMutableString stringWithFormat: @""];
+        _namePrompt.text = nameLabel;
+        current += 1;
+    }
+}
+
 - (void)useCamera:(id)sender {
         if ([UIImagePickerController isSourceTypeAvailable:
              UIImagePickerControllerSourceTypeCamera])
@@ -121,6 +159,8 @@ finishedSavingWithError:(NSError *)error
         [alert show];
     }
 }
+
+
 
 
 

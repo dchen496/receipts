@@ -11,5 +11,7 @@
 
 
 NSArray *parseReceipt(NSString *input);
+double getPrice(NSArray *input, NSString *word);
+NSArray *removeExtraLines(NSArray *input);
 
 #endif

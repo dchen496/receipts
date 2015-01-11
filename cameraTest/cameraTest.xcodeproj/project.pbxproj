@@ -11,6 +11,9 @@
 		4C00CFB91A622F2C00928F1D /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFB81A622F2C00928F1D /* PictureViewController.m */; };
 		4C00CFBC1A6232C300928F1D /* NameEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */; };
 		4C00CFBF1A62349800928F1D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBE1A62349800928F1D /* TableViewController.m */; };
+		477FC9D71A622EC9002A5D27 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FC9D61A622EC9002A5D27 /* QuartzCore.framework */; };
+		4C74DBB11A62101900F83C7A /* picturePrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */; };
+		4C74DBB41A62105900F83C7A /* picturePrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C74DBB31A62105900F83C7A /* picturePrompt.m */; };
 		4CD437491A614149003D05C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD437481A614149003D05C5 /* main.m */; };
 		4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374B1A614149003D05C5 /* AppDelegate.m */; };
 		4CD4374F1A614149003D05C5 /* PeopleNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374E1A614149003D05C5 /* PeopleNumberViewController.m */; };
@@ -44,6 +47,10 @@
 		4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameEnterViewController.m; sourceTree = "<group>"; };
 		4C00CFBD1A62349800928F1D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4C00CFBE1A62349800928F1D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		477FC9D61A622EC9002A5D27 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = picturePrompt.storyboard; sourceTree = "<group>"; };
+		4C74DBB21A62104A00F83C7A /* picturePrompt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = picturePrompt.h; sourceTree = "<group>"; };
+		4C74DBB31A62105900F83C7A /* picturePrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = picturePrompt.m; sourceTree = "<group>"; };
 		4CD437431A614149003D05C5 /* cameraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD437471A614149003D05C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD437481A614149003D05C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				477FC9D71A622EC9002A5D27 /* QuartzCore.framework in Frameworks */,
 				4CD4376D1A614158003D05C5 /* MobileCoreServices.framework in Frameworks */,
 				D582A29B26FCAC5FE868E5D2 /* libPods.a in Frameworks */,
 			);
@@ -172,6 +180,7 @@
 		70600098F61183454F1AA097 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				477FC9D61A622EC9002A5D27 /* QuartzCore.framework */,
 				264E782A56ADA47DCB2D5494 /* libPods.a */,
 			);
 			name = Frameworks;

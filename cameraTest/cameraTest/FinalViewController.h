@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)requestVenmo:(id)sender;
+- (IBAction)resetAll:(id)sender;
 
 @end

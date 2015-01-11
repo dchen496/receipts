@@ -146,7 +146,7 @@
         <!--Title-->
         <scene sceneID="itY-IE-xOL">
             <objects>
-                <viewController id="ef7-cm-Gsw" customClass="PeopleNumberViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PeopleNumberViewController" id="ef7-cm-Gsw" customClass="PeopleNumberViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MV0-N7-0GG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,7 +331,6 @@
                                 <barButtonItem title="Start Over" id="f8l-9f-hNr">
                                     <connections>
                                         <action selector="resetAll:" destination="p4A-oO-abg" id="Y6r-4a-mlc"/>
-                                        <segue destination="ef7-cm-Gsw" kind="push" id="wkY-iB-Wh0"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -383,7 +382,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="wkY-iB-Wh0"/>
-    </inferredMetricsTieBreakers>
 </document>

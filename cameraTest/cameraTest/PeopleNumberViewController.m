@@ -46,6 +46,7 @@
 }
 
 - (IBAction)maxNumber:(id)sender {
+    
     maxUsers = [_numberOfPeople.text intValue];
 }
 

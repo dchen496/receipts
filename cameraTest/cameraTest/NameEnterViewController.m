@@ -22,7 +22,7 @@
 }
 
 - (IBAction)nextUser:(id)sender isVenmo:(BOOL)venmo {
-    if(!users)
+    if(currentUser <= 1)
         users = [[NSMutableArray alloc] init];
     addUser(users, _personName.text, venmo);
     

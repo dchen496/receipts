@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C74DBB11A62101900F83C7A /* picturePrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */; };
+		4C74DBB41A62105900F83C7A /* picturePrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C74DBB31A62105900F83C7A /* picturePrompt.m */; };
 		4CD437491A614149003D05C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD437481A614149003D05C5 /* main.m */; };
 		4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374B1A614149003D05C5 /* AppDelegate.m */; };
 		4CD4374F1A614149003D05C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374E1A614149003D05C5 /* ViewController.m */; };
@@ -32,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		264E782A56ADA47DCB2D5494 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = picturePrompt.storyboard; sourceTree = "<group>"; };
+		4C74DBB21A62104A00F83C7A /* picturePrompt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = picturePrompt.h; sourceTree = "<group>"; };
+		4C74DBB31A62105900F83C7A /* picturePrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = picturePrompt.m; sourceTree = "<group>"; };
 		4CD437431A614149003D05C5 /* cameraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD437471A614149003D05C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD437481A614149003D05C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +117,9 @@
 				4CD4374B1A614149003D05C5 /* AppDelegate.m */,
 				4CD4374D1A614149003D05C5 /* ViewController.h */,
 				4CD4374E1A614149003D05C5 /* ViewController.m */,
+				4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */,
+				4C74DBB21A62104A00F83C7A /* picturePrompt.h */,
+				4C74DBB31A62105900F83C7A /* picturePrompt.m */,
 				4CD437501A614149003D05C5 /* Main.storyboard */,
 				4CD437531A614149003D05C5 /* Images.xcassets */,
 				4CD437551A614149003D05C5 /* LaunchScreen.xib */,
@@ -242,6 +250,7 @@
 				4CD437521A614149003D05C5 /* Main.storyboard in Resources */,
 				A528F5061A61B85500ACFA60 /* tessdata in Resources */,
 				4CD437571A614149003D05C5 /* LaunchScreen.xib in Resources */,
+				4C74DBB11A62101900F83C7A /* picturePrompt.storyboard in Resources */,
 				4CD437541A614149003D05C5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54853761A622AF300DD3078 /* Receipts.m in Sources */,
+				4C74DBB41A62105900F83C7A /* picturePrompt.m in Sources */,
 				4CD4374F1A614149003D05C5 /* ViewController.m in Sources */,
 				4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */,
 				4CD437491A614149003D05C5 /* main.m in Sources */,

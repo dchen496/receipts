@@ -19,6 +19,7 @@ NSArray *tableData;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%@", users);
     // Initialize table data
 }
 

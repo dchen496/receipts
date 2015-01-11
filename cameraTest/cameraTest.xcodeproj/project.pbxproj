@@ -12,6 +12,7 @@
 		4C00CFB91A622F2C00928F1D /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFB81A622F2C00928F1D /* PictureViewController.m */; };
 		4C00CFBC1A6232C300928F1D /* NameEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */; };
 		4C00CFBF1A62349800928F1D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBE1A62349800928F1D /* TableViewController.m */; };
+		4CA61A5B1A624B0900DCEB95 /* Entypo_27f2(0)_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA61A5A1A624B0900DCEB95 /* Entypo_27f2(0)_512.png */; };
 		4CD437491A614149003D05C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD437481A614149003D05C5 /* main.m */; };
 		4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374B1A614149003D05C5 /* AppDelegate.m */; };
 		4CD4374F1A614149003D05C5 /* PeopleNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374E1A614149003D05C5 /* PeopleNumberViewController.m */; };
@@ -47,6 +48,7 @@
 		4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameEnterViewController.m; sourceTree = "<group>"; };
 		4C00CFBD1A62349800928F1D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4C00CFBE1A62349800928F1D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4CA61A5A1A624B0900DCEB95 /* Entypo_27f2(0)_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Entypo_27f2(0)_512.png"; path = "Images.xcassets/Entypo_27f2(0)_512.png"; sourceTree = "<group>"; };
 		4CD437431A614149003D05C5 /* cameraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD437471A614149003D05C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD437481A614149003D05C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				4C00CFBD1A62349800928F1D /* TableViewController.h */,
 				4C00CFBE1A62349800928F1D /* TableViewController.m */,
 				4CD437531A614149003D05C5 /* Images.xcassets */,
+				4CA61A5A1A624B0900DCEB95 /* Entypo_27f2(0)_512.png */,
 				4CD437551A614149003D05C5 /* LaunchScreen.xib */,
 				4CD437461A614149003D05C5 /* Supporting Files */,
 				A55A30C11A62008600C5135A /* secrets.h */,
@@ -266,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA61A5B1A624B0900DCEB95 /* Entypo_27f2(0)_512.png in Resources */,
 				4CD437521A614149003D05C5 /* Main.storyboard in Resources */,
 				A528F5061A61B85500ACFA60 /* tessdata in Resources */,
 				4CD437571A614149003D05C5 /* LaunchScreen.xib in Resources */,

@@ -77,6 +77,22 @@
 }
 
 - (IBAction)requestVenmo:(id)sender {
+    int hasVenmo = 0;
+    for(int i = 0; i < [users count]; i++) {
+        if(getUserVenmo(users, i)) {
+            hasVenmo = 1;
+        }
+    }
+    if(!hasVenmo) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't request payments"
+                                                        message:@"Can't request payments since no Venmo IDs were entered."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+
     NSLog(@"request venmo");
     [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments]
      withCompletionHandler:^(BOOL success, NSError *error) {

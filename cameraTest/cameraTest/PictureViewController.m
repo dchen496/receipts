@@ -74,7 +74,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     tesseract.image = filteredImage;
     [tesseract recognize];
     NSLog(@"%@", [tesseract recognizedText]);
-    NSArray *receipt = parseReceipt([tesseract recognizedText]);
+    receipt = parseReceipt([tesseract recognizedText]);
     NSLog(@"%@", receipt);
     for(NSArray *line in receipt) {
         NSLog(@"item=%@, price=%@", [line objectAtIndex: 0], [line objectAtIndex: 1]);

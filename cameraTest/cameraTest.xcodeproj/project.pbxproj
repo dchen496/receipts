@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		477FC9D71A622EC9002A5D27 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FC9D61A622EC9002A5D27 /* QuartzCore.framework */; };
 		4C74DBB11A62101900F83C7A /* picturePrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */; };
 		4C74DBB41A62105900F83C7A /* picturePrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C74DBB31A62105900F83C7A /* picturePrompt.m */; };
 		4CD437491A614149003D05C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD437481A614149003D05C5 /* main.m */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		264E782A56ADA47DCB2D5494 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		477FC9D61A622EC9002A5D27 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = picturePrompt.storyboard; sourceTree = "<group>"; };
 		4C74DBB21A62104A00F83C7A /* picturePrompt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = picturePrompt.h; sourceTree = "<group>"; };
 		4C74DBB31A62105900F83C7A /* picturePrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = picturePrompt.m; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				477FC9D71A622EC9002A5D27 /* QuartzCore.framework in Frameworks */,
 				4CD4376D1A614158003D05C5 /* MobileCoreServices.framework in Frameworks */,
 				D582A29B26FCAC5FE868E5D2 /* libPods.a in Frameworks */,
 			);
@@ -160,6 +163,7 @@
 		70600098F61183454F1AA097 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				477FC9D61A622EC9002A5D27 /* QuartzCore.framework */,
 				264E782A56ADA47DCB2D5494 /* libPods.a */,
 			);
 			name = Frameworks;

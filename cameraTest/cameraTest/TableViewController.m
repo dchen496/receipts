@@ -46,6 +46,17 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (cell.textLabel.enabled) {
+        self.tableView.
+    } else {
+        self.textLabel.enabled = true;
+    }
+}
+
+
+
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
 //    // Do any additional setup after loading the view.

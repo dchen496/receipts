@@ -16,5 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) IBOutlet NSMutableArray *food;
+@property (strong, nonatomic) IBOutlet UITableView *finishedChoosing;
+@property (strong, nonatomic) IBOutlet UIToolbar *currentUser;
 
 @end

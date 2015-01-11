@@ -94,6 +94,10 @@
                             <outlet property="delegate" destination="j1B-aV-NYD" id="pIL-H6-8GU"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="currentUser" destination="SOP-Ha-O4w" id="PHK-pd-xNa"/>
+                        <outlet property="finishedChoosing" destination="iXY-H5-nNI" id="GmV-zQ-1by"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nb-Ii-Hc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,10 +194,10 @@
             </objects>
             <point key="canvasLocation" x="474" y="1062"/>
         </scene>
-        <!--Table View Controller-->
+        <!--User Table View Cell-->
         <scene sceneID="Rpi-NT-yZf">
             <objects>
-                <tableViewController storyboardIdentifier="UserTableViewCell" id="Q7M-La-3LG" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UserTableViewCell" id="Q7M-La-3LG" customClass="UserTableViewCell" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QmH-rn-6Zj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

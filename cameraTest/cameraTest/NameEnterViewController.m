@@ -16,7 +16,7 @@
 - (IBAction)finishedEnteringNames:(id)sender {
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
                                                   bundle:nil];
-    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"PicturePromptViewController"];
+    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"PictureViewController"];
 
     [self.navigationController pushViewController:vc animated:YES];
     

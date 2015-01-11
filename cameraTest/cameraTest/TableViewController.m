@@ -23,7 +23,8 @@
     [super viewDidLoad];
     // Initialize table data
     NSMutableArray *data = [[NSMutableArray alloc] init];
-    for(NSArray *entry in receipt) {
+    NSArray *cleanReceipt = removeExtraLines(receipt);
+    for(NSArray *entry in cleanReceipt) {
         NSString *name = [entry objectAtIndex: 0];
         [data addObject: name];
     }

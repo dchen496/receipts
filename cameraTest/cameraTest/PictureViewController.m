@@ -81,18 +81,18 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
     NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
     
-    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
-        UIImage *image = info[UIImagePickerControllerOriginalImage];
-        
-        _imageView.image = filteredImage;
-        _toolBar.hidden = true;
-        
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {        
         if (_newMedia)
-            UIImageWriteToSavedPhotosAlbum(image,
+            UIImageWriteToSavedPhotosAlbum(inputImage,
                                            self,
                                            @selector(image:finishedSavingWithError:contextInfo:),
                                            nil);
     }
+
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"                                          bundle:nil];
+    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"TableViewController"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(UIImage *) fixImage:(UIImage *)image {

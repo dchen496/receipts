@@ -46,8 +46,20 @@
 }
 
 - (IBAction)maxNumber:(id)sender {
-    
     maxUsers = [_numberOfPeople.text intValue];
+    if(maxUsers < 1) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not enough users"
+                                                        message:@"Please enter at least one user."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"                                          bundle:nil];
+    UIImageView* vc = [sb instantiateViewControllerWithIdentifier:@"NameEnterViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 @end

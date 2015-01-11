@@ -75,6 +75,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     stillImageFilter.blurRadiusInPixels = 20.0;
     
     UIImage *filteredImage = [stillImageFilter imageByFilteringImage:orientedImage];
+    //UIImage *filteredImage = [orientedImage blackAndWhite];
     
     tesseract.image = filteredImage;
     [tesseract recognize];
@@ -82,7 +83,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     NSArray *receipt = parseReceipt([tesseract recognizedText]);
     NSLog(@"%@", receipt);
     for(NSArray *line in receipt) {
-        NSLog(@"%@ %@", [line objectAtIndex: 0], [line objectAtIndex: 1]);
+        NSLog(@"item=%@, price=%@", [line objectAtIndex: 0], [line objectAtIndex: 1]);
     }
     NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
 
@@ -104,29 +105,36 @@ NSArray *parseReceipt(NSString *input) {
     
     NSArray *lines = [input componentsSeparatedByString:@"\n"];
     for (NSString *line in lines) {
-        NSMutableArray *item;
+        NSMutableArray *item = [[NSMutableArray alloc] init];
         double price = 0.0;
+        int has_price = 0;
         int quantity = 1;
+        int has_quantity = 0;
         
         NSArray *words = [line componentsSeparatedByString:@" "];
-        
+
         for(NSString *word in words) {
-            const char *w = [word UTF8String];
+            NSString *word2 = [word stringByReplacingOccurrencesOfString:@"," withString:@"."];
+            const char *w = [word2 UTF8String];
             double tmp;
             if(sscanf(w, "%lf", &tmp) >= 1) {
                 if(strchr(w, '.')) {
                     price = tmp;
+                    has_price++;
                     continue;
                 } else {
-                    if(quantity > 0) {
+                    if(quantity <= 0) {
+                        break;
+                    } else {
                         quantity = tmp;
+                        has_quantity++;
                         continue;
                     }
                 }
             }
             int has_letter = 0;
-            for(int i = 0; w[i]; i++) {
-                if(isalpha(i)) {
+            for(int i = 0; w[i] != '\0'; i++) {
+                if(isalpha(w[i])) {
                     has_letter = 1;
                     break;
                 }
@@ -134,10 +142,18 @@ NSArray *parseReceipt(NSString *input) {
             if(!has_letter)
                 continue;
             [item addObject: word];
+
         }
         
+        if(has_quantity > 1)
+            continue;
+        if(has_price != 1)
+            continue;
+        
+        NSString *name = [item componentsJoinedByString:@" "];
+        NSNumber *priceobj = [NSNumber numberWithDouble: price];
         for(int i = 0; i < quantity; i++) {
-            NSArray *line = @[[item componentsJoinedByString:@" "], [NSNumber numberWithInt: quantity]];
+            NSArray *line = @[name, priceobj];
             [out addObject: line];
         }
     }

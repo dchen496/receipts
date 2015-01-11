@@ -69,7 +69,7 @@ NSMutableArray *parseReceipt(NSString *input) {
         price /= quantity;
         NSNumber *priceobj = [NSNumber numberWithDouble: price];
         for(int i = 0; i < quantity; i++) {
-            NSMutableArray *line = [NSMutableArray arrayWithObjects: name, priceobj, [NSNumber numberWithInt: -1]];
+            NSMutableArray *line = [NSMutableArray arrayWithArray: @[name, priceobj, [NSNumber numberWithInt: -1]]];
             [out addObject: line];
         }
     }

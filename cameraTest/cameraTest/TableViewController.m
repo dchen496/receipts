@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "Receipts.h"
 
 @interface TableViewController ()
 
@@ -21,7 +22,12 @@
 {
     [super viewDidLoad];
     // Initialize table data
-    tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    NSMutableArray *data = [[NSMutableArray alloc] init];
+    for(NSArray *entry in receipt) {
+        NSString *name = [entry objectAtIndex: 0];
+        [data addObject: name];
+    }
+    tableData = [NSArray arrayWithArray: data];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

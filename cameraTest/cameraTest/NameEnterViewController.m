@@ -32,7 +32,7 @@
     _namePrompt.text = nameLabel;
     current += 1;
     
-    if (current >= max - 1) {
+    if (current >= max) {
         [_enterNextName removeTarget:self action:@selector(nextName:) forControlEvents:UIControlEventTouchUpInside];
         
         [_enterNextName addTarget: self action: @selector(finishedEnteringNames:) forControlEvents: UIControlEventTouchUpInside];

@@ -7,3 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+
+NSMutableArray *names = 0;
+
+void addUser(NSString *name) {
+    if(!names) {
+        names = [[NSMutableArray alloc] init];
+    }
+    [names addObject: name];
+}

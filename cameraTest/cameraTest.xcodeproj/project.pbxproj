@@ -68,6 +68,7 @@
 		A54853741A622ADC00DD3078 /* Receipts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Receipts.h; sourceTree = "<group>"; };
 		A54853751A622AF300DD3078 /* Receipts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipts.m; sourceTree = "<group>"; };
 		A54DF9831A624872002719CA /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		A54DF9851A624AA0002719CA /* Users.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		A55A30C11A62008600C5135A /* secrets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = secrets.h; sourceTree = "<group>"; };
 		B2C65F9978A55165F4D8F8E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +147,7 @@
 				A54853741A622ADC00DD3078 /* Receipts.h */,
 				A54853751A622AF300DD3078 /* Receipts.m */,
 				A54DF9831A624872002719CA /* Users.m */,
+				A54DF9851A624AA0002719CA /* Users.h */,
 			);
 			path = cameraTest;
 			sourceTree = "<group>";

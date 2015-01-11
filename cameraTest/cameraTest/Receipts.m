@@ -10,9 +10,9 @@
 #import "Receipts.h"
 #include <string.h>
 
-NSArray *receipt;
+NSMutableArray *receipt;
 
-NSArray *parseReceipt(NSString *input) {
+NSMutableArray *parseReceipt(NSString *input) {
     NSMutableArray *out = [[NSMutableArray alloc] init];
     
     NSArray *lines = [input componentsSeparatedByString:@"\n"];
@@ -30,7 +30,7 @@ NSArray *parseReceipt(NSString *input) {
             const char *w = [word2 UTF8String];
             double tmp;
             if(sscanf(w, "%lf", &tmp) >= 1) {
-                if(strchr(w, '.')) {
+                if(strchr(w, '.') && !strchr(w, '%')) {
                     price = tmp;
                     has_price++;
                     continue;
@@ -65,11 +65,11 @@ NSArray *parseReceipt(NSString *input) {
         NSString *name = [item componentsJoinedByString:@" "];
         NSNumber *priceobj = [NSNumber numberWithDouble: price];
         for(int i = 0; i < quantity; i++) {
-            NSArray *line = @[name, priceobj];
+            NSMutableArray *line = [NSMutableArray arrayWithObjects: name, priceobj, [NSNumber numberWithInt: -1]];
             [out addObject: line];
         }
     }
-    return [NSArray arrayWithArray: out];
+    return out;
 }
 
 double getPrice(NSArray *input, NSString *word) {
@@ -81,10 +81,11 @@ double getPrice(NSArray *input, NSString *word) {
     return 0.0;
 }
 
-NSArray *removeExtraLines(NSArray *input) {
+NSMutableArray *removeExtraLines(NSArray *input) {
     NSArray *remove = @[@"tax", @"total", @"gratuity", @"tip",
                         @"purchase", @"balance", @"visa", @"payment",
-                        @"change", @"mastercard", @"subtotal"];
+                        @"change", @"mastercard", @"subtotal", @"amount",
+                        @"take out", @"counter", @"cash", @"sub-total"];
     NSMutableArray *out = [[NSMutableArray alloc] init];
     for(NSArray *entry in input) {
         BOOL bad = NO;
@@ -101,4 +102,12 @@ NSArray *removeExtraLines(NSArray *input) {
         [out addObject: entry];
     }
     return out;
+}
+
+void assignUserToLine(NSMutableArray *input, int line, int user) {
+    [[input objectAtIndex: line] setObject: [NSNumber numberWithInt: user] atIndex: 2];
+}
+
+int getLineUser(NSMutableArray *input, int line) {
+    return (int) [[[input objectAtIndex: line] objectAtIndex: 2] integerValue];
 }

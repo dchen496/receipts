@@ -24,7 +24,7 @@
 
 
 - (IBAction)nextName:(id)sender {
-    addUser(_personName.text);
+    addUser(users, _personName.text, NO);
     
     NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",currentUser + 1];
     NSMutableString *nameLabel = [NSMutableString stringWithString:@"Please enter the name of person "];

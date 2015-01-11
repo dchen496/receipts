@@ -9,11 +9,12 @@
 #ifndef cameraTest_Users_h
 #define cameraTest_Users_h
 
-void addUser(NSString *name);
-
 extern int maxUsers;
 extern int currentUser;
+extern NSMutableArray *users;
 
-NSArray *getUsers();
+void addUser(NSMutableArray *input, NSString *name, BOOL isVenmo);
+NSString *getUser(NSMutableArray *input, int index);
+BOOL getUserVenmo(NSMutableArray *input, int index);
 
 #endif

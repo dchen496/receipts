@@ -48,6 +48,36 @@
             </objects>
             <point key="canvasLocation" x="901" y="286"/>
         </scene>
+        <!--Processing View Controller-->
+        <scene sceneID="rIP-9y-hSf">
+            <objects>
+                <viewController storyboardIdentifier="ProcessingViewController" id="pFr-A3-uBX" customClass="ProcessingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gTQ-QD-W5A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="OMl-Pn-47c">
+                                <rect key="frame" x="0.0" y="88" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jFA-uY-kdt">
+                                <rect key="frame" x="89" y="31" width="143" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="filteredImageView" destination="OMl-Pn-47c" id="BrZ-90-2nq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DwR-PC-YQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1242" y="956"/>
+        </scene>
         <!--Food Items-->
         <scene sceneID="Idb-EK-AYx">
             <objects>
@@ -105,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nb-Ii-Hc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1391" y="286"/>
+            <point key="canvasLocation" x="1969" y="280"/>
         </scene>
         <!--Title-->
         <scene sceneID="itY-IE-xOL">
@@ -259,15 +289,13 @@
                             <outlet property="delegate" destination="Q7M-La-3LG" id="amP-Pk-OgN"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zJz-oO-DZd"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="Nwt-h5-xDP"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERN-Xs-JyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="930"/>
+            <point key="canvasLocation" x="1583" y="286"/>
         </scene>
         <!--Final View Controller-->
         <scene sceneID="WMA-yX-i3f">
@@ -277,7 +305,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Bill Split (incl. tax)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MfL-ir-jDY">
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Bill Split (including tax)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MfL-ir-jDY">
                             <rect key="frame" x="0.0" y="-21" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -315,11 +343,12 @@
                             <outlet property="delegate" destination="p4A-oO-abg" id="YTQ-e6-Udq"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ykw-es-qXe"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEt-LJ-CuH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1423" y="985"/>
+            <point key="canvasLocation" x="2399" y="286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D9a-oZ-LOW">

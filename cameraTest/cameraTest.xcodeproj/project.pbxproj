@@ -23,6 +23,7 @@
 		4CD437631A614149003D05C5 /* cameraTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD437621A614149003D05C5 /* cameraTestTests.m */; };
 		4CD4376D1A614158003D05C5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4376C1A614158003D05C5 /* MobileCoreServices.framework */; };
 		A528F5061A61B85500ACFA60 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = A528F5051A61B85500ACFA60 /* tessdata */; };
+		A53E79601A63019B003ADCCE /* ProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E795F1A63019B003ADCCE /* ProcessingViewController.m */; };
 		A5475DCC1A628AF400F1D873 /* FinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5475DCB1A628AF400F1D873 /* FinalViewController.m */; };
 		A54853761A622AF300DD3078 /* Receipts.m in Sources */ = {isa = PBXBuildFile; fileRef = A54853751A622AF300DD3078 /* Receipts.m */; };
 		A54DF9841A624872002719CA /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = A54DF9831A624872002719CA /* Users.m */; };
@@ -70,6 +71,8 @@
 		4CD4376C1A614158003D05C5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9226C6045BD810B57CB601B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A528F5051A61B85500ACFA60 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		A53E795E1A63019B003ADCCE /* ProcessingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessingViewController.h; sourceTree = "<group>"; };
+		A53E795F1A63019B003ADCCE /* ProcessingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingViewController.m; sourceTree = "<group>"; };
 		A5475DCB1A628AF400F1D873 /* FinalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalViewController.m; sourceTree = "<group>"; };
 		A5475DCD1A628AFF00F1D873 /* FinalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinalViewController.h; sourceTree = "<group>"; };
 		A54853741A622ADC00DD3078 /* Receipts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Receipts.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				4C00CFB41A622EAA00928F1D /* PicturePromptViewController.h */,
 				4C00CFB51A622EAA00928F1D /* PicturePromptViewController.m */,
 				4CD437501A614149003D05C5 /* Main.storyboard */,
+				A53E795E1A63019B003ADCCE /* ProcessingViewController.h */,
+				A53E795F1A63019B003ADCCE /* ProcessingViewController.m */,
 				A5475DCB1A628AF400F1D873 /* FinalViewController.m */,
 				A5475DCD1A628AFF00F1D873 /* FinalViewController.h */,
 				4C00CFBA1A6232C300928F1D /* NameEnterViewController.h */,
@@ -342,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54DF9841A624872002719CA /* Users.m in Sources */,
+				A53E79601A63019B003ADCCE /* ProcessingViewController.m in Sources */,
 				A57843231A629AF6004DE418 /* VenmoController.m in Sources */,
 				A54853761A622AF300DD3078 /* Receipts.m in Sources */,
 				A5475DCC1A628AF400F1D873 /* FinalViewController.m in Sources */,

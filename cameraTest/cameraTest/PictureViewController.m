@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PictureViewController.h"
 #import "PicturePromptViewController.h"
+#import "ProcessingViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
-#import "Receipts.h"
 
 @interface PictureViewController (CameraDelegateMethods)
 
@@ -25,7 +25,6 @@
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         imagePicker.delegate = self;
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        UIImagePickerControllerSourceTypeCamera;
         imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
         imagePicker.allowsEditing = NO;
         [self presentViewController:imagePicker animated:YES completion:nil];
@@ -59,34 +58,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     NSString *mediaType = info[UIImagePickerControllerMediaType];
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    Tesseract *tesseract = [[Tesseract alloc] initWithLanguage:@"eng"];
-    tesseract.delegate = self;
+
     UIImage *inputImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *orientedImage = [self fixImage:inputImage];
-    
-    GPUImageAdaptiveThresholdFilter *stillImageFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
-    stillImageFilter.blurRadiusInPixels = 20.0;
-    
-// I have no idea
-#if TARGET_IPHONE_SIMULATOR
-    UIImage *filteredImage = [orientedImage blackAndWhite];
-#else
-    UIImage *filteredImage = [stillImageFilter imageByFilteringImage:orientedImage];
-#endif
-    
-    tesseract.image = filteredImage;
-    [tesseract recognize];
-    NSLog(@"%@", [tesseract recognizedText]);
-    receipt = parseReceipt([tesseract recognizedText]);
-    filteredReceipt = removeExtraLines(receipt);
-    NSLog(@"%@", receipt);
-    for(NSArray *line in receipt) {
-        NSLog(@"item=%@, price=%@", [line objectAtIndex: 0], [line objectAtIndex: 1]);
-    }
-    NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
-    
-    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {        
+
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         if (_newMedia)
             UIImageWriteToSavedPhotosAlbum(inputImage,
                                            self,
@@ -95,19 +70,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
 
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"                                          bundle:nil];
-    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"UserTableViewCell"];
-    
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
--(UIImage *) fixImage:(UIImage *)image {
-    if (image.imageOrientation == UIImageOrientationUp) return image;
-    
-    UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
-    [image drawInRect:(CGRect){0, 0, image.size}];
-    UIImage *normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return normalizedImage;
+    ProcessingViewController* vc = [sb instantiateViewControllerWithIdentifier:@"ProcessingViewController"];
+    vc.inputImage = inputImage;
+    NSLog(@"transition");
+    [self.navigationController pushViewController:vc animated:NO];
 }
 
 -(void)image:(UIImage *)image

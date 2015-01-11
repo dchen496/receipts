@@ -27,7 +27,7 @@
     addUser(users, _personName.text, venmo);
     
     NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",currentUser + 1];
-    NSMutableString *nameLabel = [NSMutableString stringWithString:@"Please enter the name of person "];
+    NSMutableString *nameLabel = [NSMutableString stringWithString:@"Venmo ID of person "];
     [nameLabel appendString: personNumber];
     _personName.text = [NSMutableString stringWithFormat: @""];
     _namePrompt.text = nameLabel;

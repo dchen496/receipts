@@ -17,7 +17,7 @@
 
 @property (strong, nonatomic) IBOutlet NSMutableArray *food;
 @property (strong, nonatomic) IBOutlet UITableView *finishedChoosing;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *currentUser;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *currentUser;
 @property (nonatomic) NSInteger userId;
 
 @end

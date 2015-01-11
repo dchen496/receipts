@@ -16,6 +16,7 @@
 		4CD437631A614149003D05C5 /* cameraTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD437621A614149003D05C5 /* cameraTestTests.m */; };
 		4CD4376D1A614158003D05C5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4376C1A614158003D05C5 /* MobileCoreServices.framework */; };
 		A528F5061A61B85500ACFA60 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = A528F5051A61B85500ACFA60 /* tessdata */; };
+		A54853761A622AF300DD3078 /* Receipts.m in Sources */ = {isa = PBXBuildFile; fileRef = A54853751A622AF300DD3078 /* Receipts.m */; };
 		D582A29B26FCAC5FE868E5D2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 264E782A56ADA47DCB2D5494 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		4CD4376C1A614158003D05C5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9226C6045BD810B57CB601B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A528F5051A61B85500ACFA60 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		A54853741A622ADC00DD3078 /* Receipts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Receipts.h; sourceTree = "<group>"; };
+		A54853751A622AF300DD3078 /* Receipts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipts.m; sourceTree = "<group>"; };
 		A55A30C11A62008600C5135A /* secrets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = secrets.h; sourceTree = "<group>"; };
 		B2C65F9978A55165F4D8F8E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +117,8 @@
 				4CD437551A614149003D05C5 /* LaunchScreen.xib */,
 				4CD437461A614149003D05C5 /* Supporting Files */,
 				A55A30C11A62008600C5135A /* secrets.h */,
+				A54853741A622ADC00DD3078 /* Receipts.h */,
+				A54853751A622AF300DD3078 /* Receipts.m */,
 			);
 			path = cameraTest;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54853761A622AF300DD3078 /* Receipts.m in Sources */,
 				4CD4374F1A614149003D05C5 /* ViewController.m in Sources */,
 				4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */,
 				4CD437491A614149003D05C5 /* main.m in Sources */,

@@ -23,7 +23,3 @@
 
 
 @end
-
-extern int current;
-extern int max;
-

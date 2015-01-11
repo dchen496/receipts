@@ -11,4 +11,7 @@
 
 void addUser(NSString *name);
 
+extern int maxUsers;
+extern int currentUser;
+
 #endif

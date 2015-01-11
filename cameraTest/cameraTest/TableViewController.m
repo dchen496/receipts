@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     // Initialize table data
-    tableData = receipt;
+    tableData = removeExtraLines(receipt);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

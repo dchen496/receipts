@@ -13,7 +13,6 @@
 		4C00CFBC1A6232C300928F1D /* NameEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */; };
 		4C00CFBF1A62349800928F1D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBE1A62349800928F1D /* TableViewController.m */; };
 		4CA61A5B1A624B0900DCEB95 /* Entypo_27f2(0)_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA61A5A1A624B0900DCEB95 /* Entypo_27f2(0)_512.png */; };
-		4CD37C8A1A626426003366D6 /* FoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD37C891A626426003366D6 /* FoodTableViewCell.m */; };
 		4CD37C8D1A627035003366D6 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD37C8C1A627035003366D6 /* UserTableViewCell.m */; };
 		4CD437491A614149003D05C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD437481A614149003D05C5 /* main.m */; };
 		4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374B1A614149003D05C5 /* AppDelegate.m */; };
@@ -51,8 +50,6 @@
 		4C00CFBD1A62349800928F1D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4C00CFBE1A62349800928F1D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		4CA61A5A1A624B0900DCEB95 /* Entypo_27f2(0)_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Entypo_27f2(0)_512.png"; path = "Images.xcassets/Entypo_27f2(0)_512.png"; sourceTree = "<group>"; };
-		4CD37C881A626426003366D6 /* FoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTableViewCell.h; sourceTree = "<group>"; };
-		4CD37C891A626426003366D6 /* FoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTableViewCell.m; sourceTree = "<group>"; };
 		4CD37C8B1A627035003366D6 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
 		4CD37C8C1A627035003366D6 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		4CD437431A614149003D05C5 /* cameraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,8 +142,6 @@
 				4C00CFB81A622F2C00928F1D /* PictureViewController.m */,
 				4C00CFBD1A62349800928F1D /* TableViewController.h */,
 				4C00CFBE1A62349800928F1D /* TableViewController.m */,
-				4CD37C881A626426003366D6 /* FoodTableViewCell.h */,
-				4CD37C891A626426003366D6 /* FoodTableViewCell.m */,
 				4CD37C8B1A627035003366D6 /* UserTableViewCell.h */,
 				4CD37C8C1A627035003366D6 /* UserTableViewCell.m */,
 				4CD437531A614149003D05C5 /* Images.xcassets */,
@@ -346,7 +341,6 @@
 				4CD437491A614149003D05C5 /* main.m in Sources */,
 				4C00CFB61A622EAA00928F1D /* PicturePromptViewController.m in Sources */,
 				4C00CFBF1A62349800928F1D /* TableViewController.m in Sources */,
-				4CD37C8A1A626426003366D6 /* FoodTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

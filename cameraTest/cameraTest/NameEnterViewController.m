@@ -9,6 +9,7 @@
 #import "NameEnterViewController.h"
 #import "PeopleNumberViewController.h"
 #import "PicturePromptViewController.h"
+#import "Users.h"
 
 @implementation NameEnterViewController
 
@@ -23,7 +24,7 @@
 
 
 - (IBAction)nextName:(id)sender {
-    names[current] = _personName.text;
+    addUser(_personName.text);
     
     NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",current + 1];
     NSMutableString *nameLabel = [NSMutableString stringWithString:@"Please enter the name of person "];

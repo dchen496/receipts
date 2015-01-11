@@ -30,6 +30,5 @@
 @end
 
 
-NSMutableArray *names;
 int current = 1;
 int max = 0;

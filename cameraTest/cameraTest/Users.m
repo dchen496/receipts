@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 NSMutableArray *names = 0;
+int maxUsers = 0;
+int currentUser = 1;
 
 void addUser(NSString *name) {
     if(!names) {

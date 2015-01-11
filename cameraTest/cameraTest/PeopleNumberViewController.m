@@ -10,6 +10,7 @@
 #import "PicturePromptViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
 #import "Receipts.h"
+#import "Users.h"
 
 @implementation PeopleNumberViewController
 
@@ -45,11 +46,7 @@
 }
 
 - (IBAction)maxNumber:(id)sender {
-    max = [_numberOfPeople.text intValue];
+    maxUsers = [_numberOfPeople.text intValue];
 }
 
 @end
-
-
-int current = 1;
-int max = 0;

@@ -26,19 +26,19 @@
 - (IBAction)nextName:(id)sender {
     addUser(_personName.text);
     
-    NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",current + 1];
+    NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",currentUser + 1];
     NSMutableString *nameLabel = [NSMutableString stringWithString:@"Please enter the name of person "];
     [nameLabel appendString: personNumber];
     _personName.text = [NSMutableString stringWithFormat: @""];
     _namePrompt.text = nameLabel;
-    current += 1;
+    currentUser += 1;
     
-    if (current == max) {
+    if (currentUser == maxUsers) {
         [_enterNextName removeTarget:self action:@selector(nextName:) forControlEvents:UIControlEventTouchUpInside];
         
         [_enterNextName addTarget: self action: @selector(finishedEnteringNames:) forControlEvents: UIControlEventTouchUpInside];
     }
-    if (current > max) {
+    if (currentUser > maxUsers) {
         [self finishedEnteringNames:sender];
     }
 }

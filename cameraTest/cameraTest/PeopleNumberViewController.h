@@ -24,7 +24,6 @@
 
 @end
 
-extern NSMutableArray *names;
 extern int current;
 extern int max;
 

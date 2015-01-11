@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #include <string.h>
+#import <Venmo-iOS-SDK/Venmo.h>
 
 @interface ViewController (CameraDelegateMethods)
 

@@ -79,7 +79,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     tesseract.image = filteredImage;
     [tesseract recognize];
     NSLog(@"%@", [tesseract recognizedText]);
-    NSLog(@"%@", parseReceipt([tesseract recognizedText]));
+    NSArray *receipt = parseReceipt([tesseract recognizedText]);
+    NSLog(@"%@", receipt);
+    for(NSArray *line in receipt) {
+        NSLog(@"%@ %@", [line objectAtIndex: 0], [line objectAtIndex: 1]);
+    }
     NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
 
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {

@@ -24,6 +24,8 @@
 
 
 - (IBAction)nextName:(id)sender {
+    if(!users)
+        users = [[NSMutableArray alloc] init];
     addUser(users, _personName.text, NO);
     
     NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",currentUser + 1];

@@ -53,8 +53,11 @@ NSMutableArray *parseReceipt(NSString *input) {
             }
             if(!has_letter)
                 continue;
-            [item addObject: word];
-            
+            // strip out nonalphanumeric
+            NSCharacterSet *charactersToRemove = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
+            NSString *clean = [[word componentsSeparatedByCharactersInSet:charactersToRemove] componentsJoinedByString:@""];
+            clean = [clean capitalizedString];
+            [item addObject: clean];
         }
         
         if(has_quantity > 1)
@@ -63,6 +66,7 @@ NSMutableArray *parseReceipt(NSString *input) {
             continue;
         
         NSString *name = [item componentsJoinedByString:@" "];
+        price /= quantity;
         NSNumber *priceobj = [NSNumber numberWithDouble: price];
         for(int i = 0; i < quantity; i++) {
             NSMutableArray *line = [NSMutableArray arrayWithObjects: name, priceobj, [NSNumber numberWithInt: -1]];

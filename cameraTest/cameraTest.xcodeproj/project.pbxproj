@@ -52,6 +52,7 @@
 		4CD4376C1A614158003D05C5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9226C6045BD810B57CB601B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A528F5051A61B85500ACFA60 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		A55A30C11A62008600C5135A /* secrets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = secrets.h; sourceTree = "<group>"; };
 		B2C65F9978A55165F4D8F8E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +121,7 @@
 				4CD437531A614149003D05C5 /* Images.xcassets */,
 				4CD437551A614149003D05C5 /* LaunchScreen.xib */,
 				4CD437461A614149003D05C5 /* Supporting Files */,
+				A55A30C11A62008600C5135A /* secrets.h */,
 			);
 			path = cameraTest;
 			sourceTree = "<group>";

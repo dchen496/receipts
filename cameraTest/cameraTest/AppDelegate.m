@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <Venmo-iOS-SDK/Venmo.h>
+#import "secrets.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Venmo startWithAppId: VENMO_APP_ID secret: VENMO_APP_SECRET name: "Receipts"];
+    // Use API only
+    [[Venmo sharedInstance] setDefaultTransactionMethod:VENTransactionMethodAPI];
     return YES;
 }
 
@@ -43,7 +48,12 @@
 }
 
 
-
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([[Venmo sharedInstance] handleOpenURL:url]) {
+        return YES;
+    }
+    return NO;
+}
 
 
 @end

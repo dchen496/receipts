@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#include <string.h>
+#import <Venmo-iOS-SDK/Venmo.h>
 
 @interface ViewController (CameraDelegateMethods)
 
@@ -105,21 +107,23 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     Tesseract *tesseract = [[Tesseract alloc] initWithLanguage:@"eng"];
     tesseract.delegate = self;
-    // Grab the image you want to preprocess
     UIImage *inputImage = info[UIImagePickerControllerOriginalImage];
     UIImage *orientedImage = [self fixImage:inputImage];
     
-    // Initialize our adaptive threshold filter
     GPUImageAdaptiveThresholdFilter *stillImageFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
-    stillImageFilter.blurRadiusInPixels = 20.0; // adjust this to tweak the blur radius of the filter, defaults to 4.0
+    stillImageFilter.blurRadiusInPixels = 20.0;
     
-    // Retrieve the filtered image from the filter
     UIImage *filteredImage = [stillImageFilter imageByFilteringImage:orientedImage];
+    //UIImage *filteredImage = [orientedImage blackAndWhite];
     
-    // Give Tesseract the filtered image
     tesseract.image = filteredImage;
     [tesseract recognize];
     NSLog(@"%@", [tesseract recognizedText]);
+    NSArray *receipt = parseReceipt([tesseract recognizedText]);
+    NSLog(@"%@", receipt);
+    for(NSArray *line in receipt) {
+        NSLog(@"item=%@, price=%@", [line objectAtIndex: 0], [line objectAtIndex: 1]);
+    }
     NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
 
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
@@ -133,6 +137,66 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                            @selector(image:finishedSavingWithError:contextInfo:),
                                            nil);
     }
+}
+
+NSArray *parseReceipt(NSString *input) {
+    NSMutableArray *out = [[NSMutableArray alloc] init];
+    
+    NSArray *lines = [input componentsSeparatedByString:@"\n"];
+    for (NSString *line in lines) {
+        NSMutableArray *item = [[NSMutableArray alloc] init];
+        double price = 0.0;
+        int has_price = 0;
+        int quantity = 1;
+        int has_quantity = 0;
+        
+        NSArray *words = [line componentsSeparatedByString:@" "];
+
+        for(NSString *word in words) {
+            NSString *word2 = [word stringByReplacingOccurrencesOfString:@"," withString:@"."];
+            const char *w = [word2 UTF8String];
+            double tmp;
+            if(sscanf(w, "%lf", &tmp) >= 1) {
+                if(strchr(w, '.')) {
+                    price = tmp;
+                    has_price++;
+                    continue;
+                } else {
+                    if(quantity <= 0) {
+                        break;
+                    } else {
+                        quantity = tmp;
+                        has_quantity++;
+                        continue;
+                    }
+                }
+            }
+            int has_letter = 0;
+            for(int i = 0; w[i] != '\0'; i++) {
+                if(isalpha(w[i])) {
+                    has_letter = 1;
+                    break;
+                }
+            }
+            if(!has_letter)
+                continue;
+            [item addObject: word];
+
+        }
+        
+        if(has_quantity > 1)
+            continue;
+        if(has_price != 1)
+            continue;
+        
+        NSString *name = [item componentsJoinedByString:@" "];
+        NSNumber *priceobj = [NSNumber numberWithDouble: price];
+        for(int i = 0; i < quantity; i++) {
+            NSArray *line = @[name, priceobj];
+            [out addObject: line];
+        }
+    }
+    return [NSArray arrayWithArray: out];
 }
 
 -(UIImage *) fixImage:(UIImage *)image {

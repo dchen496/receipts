@@ -14,5 +14,8 @@ extern NSMutableArray *receipt;
 NSMutableArray *parseReceipt(NSString *input);
 double getPrice(NSArray *input, NSString *word);
 NSMutableArray *removeExtraLines(NSArray *input);
+double getTotal(NSArray *input);
+double getUserTotal(NSArray *input, int user);
+double adjustForTaxes(double user, double total, double taxes);
 
 #endif

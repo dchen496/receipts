@@ -10,7 +10,7 @@
 #import "Receipts.h"
 #include <string.h>
 
-NSMutableArray *receipt;
+NSMutableArray *receipt, *filteredReceipt;
 
 NSMutableArray *parseReceipt(NSString *input) {
     NSMutableArray *out = [[NSMutableArray alloc] init];
@@ -83,6 +83,28 @@ double getPrice(NSArray *input, NSString *word) {
         }
     }
     return 0.0;
+}
+
+double getTotal(NSArray *input) {
+    double total = 0.0;
+    for(NSArray *entry in input) {
+        total += [[entry objectAtIndex:1] doubleValue];
+    }
+    return total;
+}
+
+double getUserTotal(NSArray *input, int user) {
+    double total = 0.0;
+    for(NSArray *entry in input) {
+        int u = [[entry objectAtIndex:2] intValue];
+        if(u == user)
+            total += [[entry objectAtIndex:1] doubleValue];
+    }
+    return total;
+}
+
+double adjustForTaxes(double user, double total, double taxes) {
+    return user * (1.0 + taxes / total);
 }
 
 NSMutableArray *removeExtraLines(NSArray *input) {

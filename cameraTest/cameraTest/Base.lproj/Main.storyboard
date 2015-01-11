@@ -172,7 +172,6 @@
                                 </state>
                                 <connections>
                                     <action selector="maxNumber:" destination="ef7-cm-Gsw" eventType="touchUpInside" id="aBg-df-XCr"/>
-                                    <segue destination="OYt-Ts-ECC" kind="push" id="bM0-8s-Y3G"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -191,7 +190,7 @@
         <!--Name Enter View Controller-->
         <scene sceneID="wyI-XR-pGA">
             <objects>
-                <viewController id="OYt-Ts-ECC" customClass="NameEnterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NameEnterViewController" id="OYt-Ts-ECC" customClass="NameEnterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="blc-3R-EEK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -43,6 +43,12 @@
     
     cell.textLabel.text = [[tableData objectAtIndex:indexPath.row] objectAtIndex: 0];
     int u = getLineUser(receipt, indexPath.row);
+    NSLog(@"%d %ld %ld", u, _userId, indexPath.row);
+    cell.userInteractionEnabled = YES;
+    cell.textLabel.enabled = YES;
+    cell.detailTextLabel.enabled = YES;
+    cell.accessoryType = UITableViewCellAccessoryNone;
+
     if(u == _userId) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else if(u < 0) {

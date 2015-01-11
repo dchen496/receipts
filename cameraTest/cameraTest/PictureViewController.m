@@ -24,7 +24,7 @@
     {
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         imagePicker.delegate = self;
-        imagePicker.sourceType =
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         UIImagePickerControllerSourceTypeCamera;
         imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
         imagePicker.allowsEditing = NO;
@@ -46,6 +46,7 @@
         imagePicker.allowsEditing = NO;
         [self presentViewController:imagePicker animated:YES completion:nil];
         _newMedia = NO;
+        
     }
 }
 
@@ -84,6 +85,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         
         _imageView.image = filteredImage;
+        _toolBar.hidden = true;
         
         if (_newMedia)
             UIImageWriteToSavedPhotosAlbum(image,

@@ -139,14 +139,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     //UIImage *filteredImage = [orientedImage blackAndWhite];
     
     tesseract.image = filteredImage;
+    NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
+
     [tesseract recognize];
     NSLog(@"%@", [tesseract recognizedText]);
+
     NSArray *receipt = parseReceipt([tesseract recognizedText]);
     NSLog(@"%@", receipt);
-    for(NSArray *line in receipt) {
-        NSLog(@"item=%@, price=%@", [line objectAtIndex: 0], [line objectAtIndex: 1]);
-    }
-    NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
 
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *image = info[UIImagePickerControllerOriginalImage];

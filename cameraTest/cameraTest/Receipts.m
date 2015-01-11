@@ -71,4 +71,33 @@ NSArray *parseReceipt(NSString *input) {
     return [NSArray arrayWithArray: out];
 }
 
+double getPrice(NSArray *input, NSString *word) {
+    for(NSArray *entry in input) {
+        if([[entry objectAtIndex: 0] rangeOfString:word options: NSCaseInsensitiveSearch ].location != NSNotFound) {
+            return [[entry objectAtIndex:1 ] doubleValue];
+        }
+    }
+    return 0.0;
+}
 
+NSArray *removeExtraLines(NSArray *input) {
+    NSArray *remove = @[@"tax", @"total", @"gratuity", @"tip",
+                        @"purchase", @"balance", @"visa", @"payment",
+                        @"change", @"mastercard", @"subtotal"];
+    NSMutableArray *out = [[NSMutableArray alloc] init];
+    for(NSArray *entry in input) {
+        BOOL bad = NO;
+        NSString *name = [entry objectAtIndex: 0];
+        for(NSString *word in remove) {
+            if([name rangeOfString:word options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                bad = YES;
+                break;
+            }
+        }
+        if(bad) {
+            continue;
+        }
+        [out addObject: entry];
+    }
+    return out;
+}

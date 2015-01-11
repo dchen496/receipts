@@ -60,7 +60,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem title="Done" id="AeS-eo-xae"/>
+                                <barButtonItem title="Done" id="AeS-eo-xae">
+                                    <connections>
+                                        <segue destination="Q7M-La-3LG" kind="push" id="ytg-NL-gNq"/>
+                                    </connections>
+                                </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="weO-w2-piI"/>
                                 <barButtonItem title="User" id="7aF-fz-8q1">
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,7 +99,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="currentUser" destination="SOP-Ha-O4w" id="PHK-pd-xNa"/>
+                        <outlet property="currentUser" destination="7aF-fz-8q1" id="NMY-0e-fJv"/>
                         <outlet property="finishedChoosing" destination="iXY-H5-nNI" id="GmV-zQ-1by"/>
                     </connections>
                 </tableViewController>
@@ -230,6 +234,7 @@
                             <outlet property="delegate" destination="Q7M-La-3LG" id="amP-Pk-OgN"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Nwt-h5-xDP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERN-Xs-JyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

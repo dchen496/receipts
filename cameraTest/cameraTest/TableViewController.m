@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "Receipts.h"
+#import "Users.h"
 
 @interface TableViewController ()
 
@@ -22,7 +23,8 @@
 {
     [super viewDidLoad];
     // Initialize table data
-    tableData = removeExtraLines(receipt);
+    tableData = filteredReceipt;
+    [_currentUser setTitle: getUsername(users, _userId)];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -35,24 +37,39 @@
     static NSString *simpleTableIdentifier = @"Item List";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
     
     cell.textLabel.text = [[tableData objectAtIndex:indexPath.row] objectAtIndex: 0];
+    int u = getLineUser(receipt, indexPath.row);
+    if(u == _userId) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else if(u < 0) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        cell.userInteractionEnabled = NO;
+        cell.textLabel.enabled = NO;
+        cell.detailTextLabel.enabled = NO;
+    }
     double price = [[[tableData objectAtIndex:indexPath.row] objectAtIndex: 1] doubleValue];
     cell.detailTextLabel.text = [NSString stringWithFormat: @"$%.2f", price];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (cell.textLabel.enabled) {
-        self.tableView.
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    int row = indexPath.row;
+    int user = _userId;
+    NSLog(@"%d", getLineUser(receipt, row));
+    if(getLineUser(receipt, row) < 0) {
+        assignUserToLine(receipt, row, user);
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
-        self.textLabel.enabled = true;
+        unassignLine(receipt, row);
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    [tableView reloadData];
 }
 
 

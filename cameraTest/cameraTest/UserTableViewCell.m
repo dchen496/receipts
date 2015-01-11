@@ -45,9 +45,9 @@ NSArray *tableData;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"                                          bundle:nil];
-    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"TableViewController"];
-    
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TableViewController* vc = [sb instantiateViewControllerWithIdentifier:@"TableViewController"];
+    vc.userId = indexPath.row;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

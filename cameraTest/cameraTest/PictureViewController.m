@@ -79,6 +79,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [tesseract recognize];
     NSLog(@"%@", [tesseract recognizedText]);
     receipt = parseReceipt([tesseract recognizedText]);
+    filteredReceipt = removeExtraLines(receipt);
     NSLog(@"%@", receipt);
     for(NSArray *line in receipt) {
         NSLog(@"item=%@, price=%@", [line objectAtIndex: 0], [line objectAtIndex: 1]);

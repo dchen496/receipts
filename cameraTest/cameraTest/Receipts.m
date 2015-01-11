@@ -134,6 +134,10 @@ void assignUserToLine(NSMutableArray *input, int line, int user) {
     [[input objectAtIndex: line] setObject: [NSNumber numberWithInt: user] atIndex: 2];
 }
 
+void unassignLine(NSMutableArray *input, int line) {
+    [[input objectAtIndex: line] setObject: [NSNumber numberWithInt: -1] atIndex: 2];
+}
+
 int getLineUser(NSMutableArray *input, int line) {
     return (int) [[[input objectAtIndex: line] objectAtIndex: 2] integerValue];
 }

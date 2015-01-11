@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "Receipts.h"
 
 @interface TableViewController ()
 
@@ -21,7 +22,7 @@
 {
     [super viewDidLoad];
     // Initialize table data
-    tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    tableData = removeExtraLines(receipt);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -36,10 +37,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[tableData objectAtIndex:indexPath.row] objectAtIndex: 0];
+    double price = [[[tableData objectAtIndex:indexPath.row] objectAtIndex: 1] doubleValue];
+    cell.detailTextLabel.text = [NSString stringWithFormat: @"$%.2f", price];
     return cell;
 }
 

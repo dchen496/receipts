@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 
 @property (strong, nonatomic) IBOutlet UILabel *tableTitle;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) IBOutlet NSMutableArray *food;
 
 @end

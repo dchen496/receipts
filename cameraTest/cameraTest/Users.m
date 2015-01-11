@@ -18,3 +18,7 @@ void addUser(NSString *name) {
     }
     [names addObject: name];
 }
+
+NSArray *getUsers() {
+    return [NSArray arrayWithArray: names];
+}

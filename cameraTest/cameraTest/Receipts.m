@@ -10,6 +10,7 @@
 #import "Receipts.h"
 #include <string.h>
 
+NSArray *receipt;
 
 NSArray *parseReceipt(NSString *input) {
     NSMutableArray *out = [[NSMutableArray alloc] init];

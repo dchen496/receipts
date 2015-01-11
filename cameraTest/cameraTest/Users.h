@@ -14,7 +14,7 @@ extern int currentUser;
 extern NSMutableArray *users;
 
 void addUser(NSMutableArray *input, NSString *name, BOOL isVenmo);
-NSString *getUser(NSMutableArray *input, int index);
+NSString *getUsername(NSMutableArray *input, int index);
 BOOL getUserVenmo(NSMutableArray *input, int index);
 
 #endif

@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) IBOutlet NSMutableArray *food;
+
 @end

@@ -13,9 +13,6 @@ int maxUsers = 0;
 int currentUser = 1;
 
 void addUser(NSMutableArray *input, NSString *name, BOOL isVenmo) {
-    if(!input) {
-        input = [[NSMutableArray alloc] init];
-    }
     [input addObject: @[name, [NSNumber numberWithBool: isVenmo]]];
 }
 

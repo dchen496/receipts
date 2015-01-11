@@ -51,7 +51,7 @@
         <!--Table View Controller-->
         <scene sceneID="Idb-EK-AYx">
             <objects>
-                <tableViewController storyboardIdentifier="TableViewController" id="j1B-aV-NYD" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableViewController" id="j1B-aV-NYD" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iXY-H5-nNI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -14,6 +14,10 @@
 @implementation NameEnterViewController
 
 - (IBAction)finishedEnteringNames:(id)sender {
+    if(!users)
+        users = [[NSMutableArray alloc] init];
+    addUser(users, _personName.text, NO);
+
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
                                                   bundle:nil];
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"PictureViewController"];

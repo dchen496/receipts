@@ -68,8 +68,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     GPUImageAdaptiveThresholdFilter *stillImageFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
     stillImageFilter.blurRadiusInPixels = 20.0;
     
+// I have no idea
+#if TARGET_IPHONE_SIMULATOR
+    UIImage *filteredImage = [orientedImage blackAndWhite];
+#else
     UIImage *filteredImage = [stillImageFilter imageByFilteringImage:orientedImage];
-    //UIImage *filteredImage = [orientedImage blackAndWhite];
+#endif
     
     tesseract.image = filteredImage;
     [tesseract recognize];

@@ -26,6 +26,7 @@
 		A5475DCC1A628AF400F1D873 /* FinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5475DCB1A628AF400F1D873 /* FinalViewController.m */; };
 		A54853761A622AF300DD3078 /* Receipts.m in Sources */ = {isa = PBXBuildFile; fileRef = A54853751A622AF300DD3078 /* Receipts.m */; };
 		A54DF9841A624872002719CA /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = A54DF9831A624872002719CA /* Users.m */; };
+		A57843231A629AF6004DE418 /* VenmoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57843221A629AF6004DE418 /* VenmoController.m */; };
 		D582A29B26FCAC5FE868E5D2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 264E782A56ADA47DCB2D5494 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		A54DF9831A624872002719CA /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		A54DF9851A624AA0002719CA /* Users.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		A55A30C11A62008600C5135A /* secrets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = secrets.h; sourceTree = "<group>"; };
+		A57843211A629AF6004DE418 /* VenmoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenmoController.h; sourceTree = "<group>"; };
+		A57843221A629AF6004DE418 /* VenmoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenmoController.m; sourceTree = "<group>"; };
 		B2C65F9978A55165F4D8F8E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +161,8 @@
 				A54853751A622AF300DD3078 /* Receipts.m */,
 				A54DF9831A624872002719CA /* Users.m */,
 				A54DF9851A624AA0002719CA /* Users.h */,
+				A57843211A629AF6004DE418 /* VenmoController.h */,
+				A57843221A629AF6004DE418 /* VenmoController.m */,
 			);
 			path = cameraTest;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54DF9841A624872002719CA /* Users.m in Sources */,
+				A57843231A629AF6004DE418 /* VenmoController.m in Sources */,
 				A54853761A622AF300DD3078 /* Receipts.m in Sources */,
 				A5475DCC1A628AF400F1D873 /* FinalViewController.m in Sources */,
 				4C00CFBC1A6232C300928F1D /* NameEnterViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "FinalViewController.h"
 #import "Receipts.h"
 #import "Users.h"
+#import <Venmo-iOS-SDK/Venmo.h>
 
 @implementation FinalViewController
 {
@@ -73,6 +74,59 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)requestVenmo:(id)sender {
+    NSLog(@"request venmo");
+    [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments]
+     withCompletionHandler:^(BOOL success, NSError *error) {
+         if (success) {
+             [self doVenmoRequest];
+         }
+         else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Venmo authentication failed"
+                message:@"Could not authenticate with Venmo."
+                delegate:nil
+                cancelButtonTitle:@"OK"
+                otherButtonTitles:nil];
+                [alert show];
+         }
+     }];
+}
+
+- (void) doVenmoRequest {
+    for(int i = 0; i < [users count]; i++) {
+        if(getUserVenmo(users, i)) {
+            double usertotal = getUserTotal(filteredReceipt, i);
+            double tax = getPrice(receipt, @"tax");
+            double total = getTotal(filteredReceipt);
+            double adjusted = adjustForTaxes(usertotal, total, tax);
+            [[Venmo sharedInstance]
+                sendRequestTo: getUsername(users, i)
+                amount: adjusted * 100
+                note: @"Bill split using OCR"
+                completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
+                 if (success) {
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Venmo request successful"
+                                                                     message:
+                                           [NSString stringWithFormat:@"Successfully charged %@ for $%.2f on Venmo.", getUsername(users, i), adjusted]
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"OK"
+                                                           otherButtonTitles:nil];
+                     [alert show];
+                 }
+                 else {
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Venmo request failed."
+                                           message:
+                                           [NSString stringWithFormat:@"Failed to charge %@ for $%.2f on Venmo.", getUsername(users, i), adjusted]
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"OK"
+                                                           otherButtonTitles:nil];
+                     [alert show];
+                 }
+            }];
+        }
+    }
 }
 
 /*

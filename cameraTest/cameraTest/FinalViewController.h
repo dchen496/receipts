@@ -15,5 +15,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+- (IBAction)requestVenmo:(id)sender;
 
 @end

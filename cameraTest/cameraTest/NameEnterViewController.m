@@ -13,25 +13,18 @@
 
 @implementation NameEnterViewController
 
-- (IBAction)finishedEnteringNames:(id)sender {
-    if(!users)
-        users = [[NSMutableArray alloc] init];
-    if(currentUser == maxUsers)
-        addUser(users, _personName.text, NO);
-
-    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
-                                                  bundle:nil];
-    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"PictureViewController"];
-
-    [self.navigationController pushViewController:vc animated:YES];
-    
+- (IBAction)nextName:(id)sender {
+    [self nextUser:sender isVenmo:NO];
 }
 
+- (IBAction)nextVenmoId:(id)sender {
+    [self nextUser:sender isVenmo:YES];
+}
 
-- (IBAction)nextName:(id)sender {
+- (IBAction)nextUser:(id)sender isVenmo:(BOOL)venmo {
     if(!users)
         users = [[NSMutableArray alloc] init];
-    addUser(users, _personName.text, NO);
+    addUser(users, _personName.text, venmo);
     
     NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",currentUser + 1];
     NSMutableString *nameLabel = [NSMutableString stringWithString:@"Please enter the name of person "];
@@ -40,13 +33,12 @@
     _namePrompt.text = nameLabel;
     currentUser += 1;
     
-    if (currentUser == maxUsers) {
-        [_enterNextName removeTarget:self action:@selector(nextName:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [_enterNextName addTarget: self action: @selector(finishedEnteringNames:) forControlEvents: UIControlEventTouchUpInside];
-    }
     if (currentUser > maxUsers) {
-        [self finishedEnteringNames:sender];
+        UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
+                                                      bundle:nil];
+        UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"PictureViewController"];
+        
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

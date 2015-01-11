@@ -9,6 +9,8 @@
 #ifndef cameraTest_Receipts_h
 #define cameraTest_Receipts_h
 
+extern NSArray *receipt;
+
 NSArray *parseReceipt(NSString *input);
 double getPrice(NSArray *input, NSString *word);
 NSArray *removeExtraLines(NSArray *input);

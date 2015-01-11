@@ -10,6 +10,7 @@
 #import <TesseractOCR/TesseractOCR.h>
 
 @interface ProcessingViewController : UIViewController <TesseractDelegate>
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @property (strong, nonatomic) UIImage *inputImage;
 @property (weak, nonatomic) IBOutlet UIImageView *filteredImageView;

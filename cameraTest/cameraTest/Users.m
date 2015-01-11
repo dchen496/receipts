@@ -8,17 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-NSMutableArray *names = 0;
+NSMutableArray *users = 0;
 int maxUsers = 0;
 int currentUser = 1;
 
-void addUser(NSString *name) {
-    if(!names) {
-        names = [[NSMutableArray alloc] init];
+void addUser(NSMutableArray *input, NSString *name, BOOL isVenmo) {
+    if(!input) {
+        input = [[NSMutableArray alloc] init];
     }
-    [names addObject: name];
+    [input addObject: @[name, [NSNumber numberWithBool: isVenmo]]];
 }
 
-NSArray *getUsers() {
-    return [NSArray arrayWithArray: names];
+NSString *getUsername(NSMutableArray *input, int index) {
+    if(index < 0)
+        return @"";
+    return [[input objectAtIndex: index] objectAtIndex: 0];
+}
+
+BOOL getUserVenmo(NSMutableArray *input, int index) {
+    if(index < 0)
+        return NO;
+    return [[[input objectAtIndex: index] objectAtIndex: 1] boolValue];
 }

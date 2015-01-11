@@ -56,13 +56,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review the List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G8V-6i-WmH">
-                            <rect key="frame" x="0.0" y="-21" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SOP-Ha-O4w">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Done" id="AeS-eo-xae"/>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="weO-w2-piI"/>
+                                <barButtonItem title="User" id="7aF-fz-8q1">
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="0Hq-8w-ni8" detailTextLabel="FGe-T7-fs4" style="IBUITableViewCellStyleValue1" id="5Qy-fz-JfO">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -189,7 +193,7 @@
         <!--Table View Controller-->
         <scene sceneID="Rpi-NT-yZf">
             <objects>
-                <tableViewController id="Q7M-La-3LG" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UserTableViewCell" id="Q7M-La-3LG" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QmH-rn-6Zj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,7 +229,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERN-Xs-JyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="938"/>
+            <point key="canvasLocation" x="901" y="930"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D9a-oZ-LOW">

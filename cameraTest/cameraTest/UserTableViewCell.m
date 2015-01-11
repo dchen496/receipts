@@ -42,6 +42,15 @@ NSArray *tableData;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"                                          bundle:nil];
+    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"TableViewController"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 
 //- (void)awakeFromNib {
 //    // Initialization code

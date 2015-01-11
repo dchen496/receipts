@@ -90,7 +90,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
 
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"                                          bundle:nil];
-    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"TableViewController"];
+    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"UserTableViewCell"];
     
     [self.navigationController pushViewController:vc animated:YES];
 }

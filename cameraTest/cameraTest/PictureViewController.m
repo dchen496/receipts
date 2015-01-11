@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "PictureViewController.h"
-#import "PicturePromptViewController.h"
 #import "ProcessingViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
 

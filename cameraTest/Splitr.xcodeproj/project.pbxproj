@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		477FC9D71A622EC9002A5D27 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FC9D61A622EC9002A5D27 /* QuartzCore.framework */; };
-		4C00CFB61A622EAA00928F1D /* PicturePromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFB51A622EAA00928F1D /* PicturePromptViewController.m */; };
 		4C00CFB91A622F2C00928F1D /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFB81A622F2C00928F1D /* PictureViewController.m */; };
 		4C00CFBC1A6232C300928F1D /* NameEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */; };
 		4C00CFBF1A62349800928F1D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBE1A62349800928F1D /* TableViewController.m */; };
@@ -27,7 +26,6 @@
 		A5475DCC1A628AF400F1D873 /* FinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5475DCB1A628AF400F1D873 /* FinalViewController.m */; };
 		A54853761A622AF300DD3078 /* Receipts.m in Sources */ = {isa = PBXBuildFile; fileRef = A54853751A622AF300DD3078 /* Receipts.m */; };
 		A54DF9841A624872002719CA /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = A54DF9831A624872002719CA /* Users.m */; };
-		A57843231A629AF6004DE418 /* VenmoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57843221A629AF6004DE418 /* VenmoController.m */; };
 		D582A29B26FCAC5FE868E5D2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 264E782A56ADA47DCB2D5494 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +42,6 @@
 /* Begin PBXFileReference section */
 		264E782A56ADA47DCB2D5494 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		477FC9D61A622EC9002A5D27 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4C00CFB41A622EAA00928F1D /* PicturePromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturePromptViewController.h; sourceTree = "<group>"; };
-		4C00CFB51A622EAA00928F1D /* PicturePromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturePromptViewController.m; sourceTree = "<group>"; };
 		4C00CFB71A622F2C00928F1D /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewController.h; sourceTree = "<group>"; };
 		4C00CFB81A622F2C00928F1D /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewController.m; sourceTree = "<group>"; };
 		4C00CFBA1A6232C300928F1D /* NameEnterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameEnterViewController.h; sourceTree = "<group>"; };
@@ -80,8 +76,6 @@
 		A54DF9831A624872002719CA /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		A54DF9851A624AA0002719CA /* Users.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		A55A30C11A62008600C5135A /* secrets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = secrets.h; sourceTree = "<group>"; };
-		A57843211A629AF6004DE418 /* VenmoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenmoController.h; sourceTree = "<group>"; };
-		A57843221A629AF6004DE418 /* VenmoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenmoController.m; sourceTree = "<group>"; };
 		B2C65F9978A55165F4D8F8E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,8 +136,6 @@
 			children = (
 				4CD4374D1A614149003D05C5 /* PeopleNumberViewController.h */,
 				4CD4374E1A614149003D05C5 /* PeopleNumberViewController.m */,
-				4C00CFB41A622EAA00928F1D /* PicturePromptViewController.h */,
-				4C00CFB51A622EAA00928F1D /* PicturePromptViewController.m */,
 				4CD437501A614149003D05C5 /* Main.storyboard */,
 				A53E795E1A63019B003ADCCE /* ProcessingViewController.h */,
 				A53E795F1A63019B003ADCCE /* ProcessingViewController.m */,
@@ -166,8 +158,6 @@
 				A54853751A622AF300DD3078 /* Receipts.m */,
 				A54DF9831A624872002719CA /* Users.m */,
 				A54DF9851A624AA0002719CA /* Users.h */,
-				A57843211A629AF6004DE418 /* VenmoController.h */,
-				A57843221A629AF6004DE418 /* VenmoController.m */,
 			);
 			path = cameraTest;
 			sourceTree = "<group>";
@@ -348,7 +338,6 @@
 			files = (
 				A54DF9841A624872002719CA /* Users.m in Sources */,
 				A53E79601A63019B003ADCCE /* ProcessingViewController.m in Sources */,
-				A57843231A629AF6004DE418 /* VenmoController.m in Sources */,
 				A54853761A622AF300DD3078 /* Receipts.m in Sources */,
 				A5475DCC1A628AF400F1D873 /* FinalViewController.m in Sources */,
 				4C00CFBC1A6232C300928F1D /* NameEnterViewController.m in Sources */,
@@ -357,7 +346,6 @@
 				4CD4374F1A614149003D05C5 /* PeopleNumberViewController.m in Sources */,
 				4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */,
 				4CD437491A614149003D05C5 /* main.m in Sources */,
-				4C00CFB61A622EAA00928F1D /* PicturePromptViewController.m in Sources */,
 				4C00CFBF1A62349800928F1D /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

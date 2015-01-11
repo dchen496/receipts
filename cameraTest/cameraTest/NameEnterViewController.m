@@ -8,7 +8,6 @@
 
 #import "NameEnterViewController.h"
 #import "PeopleNumberViewController.h"
-#import "PicturePromptViewController.h"
 #import "Users.h"
 
 @implementation NameEnterViewController

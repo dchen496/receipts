@@ -7,7 +7,6 @@
 //
 
 #import "PeopleNumberViewController.h"
-#import "PicturePromptViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
 #import "Receipts.h"
 #import "Users.h"

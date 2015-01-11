@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-#import <TesseractOCR/TesseractOCR.h>
-#import <GPUIMage.h>
 
-@interface PictureViewController : UIViewController <TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PictureViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property BOOL newMedia;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolBar;

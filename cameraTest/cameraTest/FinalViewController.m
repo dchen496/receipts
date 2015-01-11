@@ -116,6 +116,9 @@
     users = NULL;
     maxUsers = 0;
     currentUser = 1;
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"                                          bundle:nil];
+    UIImageView* vc = [sb instantiateViewControllerWithIdentifier:@"PeopleNumberViewController"];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 
 - (void) doVenmoRequest {

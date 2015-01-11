@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C74DBB11A62101900F83C7A /* picturePrompt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */; };
-		4C74DBB41A62105900F83C7A /* picturePrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C74DBB31A62105900F83C7A /* picturePrompt.m */; };
+		4C00CFB61A622EAA00928F1D /* PicturePromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFB51A622EAA00928F1D /* PicturePromptViewController.m */; };
+		4C00CFB91A622F2C00928F1D /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFB81A622F2C00928F1D /* PictureViewController.m */; };
+		4C00CFBC1A6232C300928F1D /* NameEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */; };
+		4C00CFBF1A62349800928F1D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C00CFBE1A62349800928F1D /* TableViewController.m */; };
 		4CD437491A614149003D05C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD437481A614149003D05C5 /* main.m */; };
 		4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374B1A614149003D05C5 /* AppDelegate.m */; };
-		4CD4374F1A614149003D05C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374E1A614149003D05C5 /* ViewController.m */; };
+		4CD4374F1A614149003D05C5 /* PeopleNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4374E1A614149003D05C5 /* PeopleNumberViewController.m */; };
 		4CD437521A614149003D05C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD437501A614149003D05C5 /* Main.storyboard */; };
 		4CD437541A614149003D05C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD437531A614149003D05C5 /* Images.xcassets */; };
 		4CD437571A614149003D05C5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD437551A614149003D05C5 /* LaunchScreen.xib */; };
@@ -34,16 +36,21 @@
 
 /* Begin PBXFileReference section */
 		264E782A56ADA47DCB2D5494 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = picturePrompt.storyboard; sourceTree = "<group>"; };
-		4C74DBB21A62104A00F83C7A /* picturePrompt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = picturePrompt.h; sourceTree = "<group>"; };
-		4C74DBB31A62105900F83C7A /* picturePrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = picturePrompt.m; sourceTree = "<group>"; };
+		4C00CFB41A622EAA00928F1D /* PicturePromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturePromptViewController.h; sourceTree = "<group>"; };
+		4C00CFB51A622EAA00928F1D /* PicturePromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturePromptViewController.m; sourceTree = "<group>"; };
+		4C00CFB71A622F2C00928F1D /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewController.h; sourceTree = "<group>"; };
+		4C00CFB81A622F2C00928F1D /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewController.m; sourceTree = "<group>"; };
+		4C00CFBA1A6232C300928F1D /* NameEnterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameEnterViewController.h; sourceTree = "<group>"; };
+		4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameEnterViewController.m; sourceTree = "<group>"; };
+		4C00CFBD1A62349800928F1D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		4C00CFBE1A62349800928F1D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		4CD437431A614149003D05C5 /* cameraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD437471A614149003D05C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD437481A614149003D05C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4CD4374A1A614149003D05C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CD4374B1A614149003D05C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4CD4374D1A614149003D05C5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4CD4374E1A614149003D05C5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4CD4374D1A614149003D05C5 /* PeopleNumberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeopleNumberViewController.h; sourceTree = "<group>"; };
+		4CD4374E1A614149003D05C5 /* PeopleNumberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeopleNumberViewController.m; sourceTree = "<group>"; };
 		4CD437511A614149003D05C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CD437531A614149003D05C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CD437561A614149003D05C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -113,14 +120,17 @@
 		4CD437451A614149003D05C5 /* cameraTest */ = {
 			isa = PBXGroup;
 			children = (
-				4CD4374A1A614149003D05C5 /* AppDelegate.h */,
-				4CD4374B1A614149003D05C5 /* AppDelegate.m */,
-				4CD4374D1A614149003D05C5 /* ViewController.h */,
-				4CD4374E1A614149003D05C5 /* ViewController.m */,
-				4C74DBB01A62101900F83C7A /* picturePrompt.storyboard */,
-				4C74DBB21A62104A00F83C7A /* picturePrompt.h */,
-				4C74DBB31A62105900F83C7A /* picturePrompt.m */,
+				4CD4374D1A614149003D05C5 /* PeopleNumberViewController.h */,
+				4CD4374E1A614149003D05C5 /* PeopleNumberViewController.m */,
+				4C00CFB41A622EAA00928F1D /* PicturePromptViewController.h */,
+				4C00CFB51A622EAA00928F1D /* PicturePromptViewController.m */,
 				4CD437501A614149003D05C5 /* Main.storyboard */,
+				4C00CFBA1A6232C300928F1D /* NameEnterViewController.h */,
+				4C00CFBB1A6232C300928F1D /* NameEnterViewController.m */,
+				4C00CFB71A622F2C00928F1D /* PictureViewController.h */,
+				4C00CFB81A622F2C00928F1D /* PictureViewController.m */,
+				4C00CFBD1A62349800928F1D /* TableViewController.h */,
+				4C00CFBE1A62349800928F1D /* TableViewController.m */,
 				4CD437531A614149003D05C5 /* Images.xcassets */,
 				4CD437551A614149003D05C5 /* LaunchScreen.xib */,
 				4CD437461A614149003D05C5 /* Supporting Files */,
@@ -134,6 +144,8 @@
 		4CD437461A614149003D05C5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CD4374A1A614149003D05C5 /* AppDelegate.h */,
+				4CD4374B1A614149003D05C5 /* AppDelegate.m */,
 				4CD437471A614149003D05C5 /* Info.plist */,
 				4CD437481A614149003D05C5 /* main.m */,
 			);
@@ -250,7 +262,6 @@
 				4CD437521A614149003D05C5 /* Main.storyboard in Resources */,
 				A528F5061A61B85500ACFA60 /* tessdata in Resources */,
 				4CD437571A614149003D05C5 /* LaunchScreen.xib in Resources */,
-				4C74DBB11A62101900F83C7A /* picturePrompt.storyboard in Resources */,
 				4CD437541A614149003D05C5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,10 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54853761A622AF300DD3078 /* Receipts.m in Sources */,
-				4C74DBB41A62105900F83C7A /* picturePrompt.m in Sources */,
-				4CD4374F1A614149003D05C5 /* ViewController.m in Sources */,
+				4C00CFBC1A6232C300928F1D /* NameEnterViewController.m in Sources */,
+				4C00CFB91A622F2C00928F1D /* PictureViewController.m in Sources */,
+				4CD4374F1A614149003D05C5 /* PeopleNumberViewController.m in Sources */,
 				4CD4374C1A614149003D05C5 /* AppDelegate.m in Sources */,
 				4CD437491A614149003D05C5 /* main.m in Sources */,
+				4C00CFB61A622EAA00928F1D /* PicturePromptViewController.m in Sources */,
+				4C00CFBF1A62349800928F1D /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

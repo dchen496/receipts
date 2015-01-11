@@ -1,98 +1,52 @@
 //
-//  ViewController.m
+//  PictureViewController.m
 //  cameraTest
 //
 //  Created by Michael Chen on 1/10/15.
 //  Copyright (c) 2015 Michael Chen. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
+#import "PictureViewController.h"
+#import "PicturePromptViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
 #import "Receipts.h"
 
-@interface ViewController (CameraDelegateMethods)
+@interface PictureViewController (CameraDelegateMethods)
 
 @end
 
-@implementation ViewController
+@implementation PictureViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-NSMutableArray *names;
-int current = 1;
-int max = 0;
-
-- (IBAction)maxNumber:(id)sender {
-    max = [_numberOfPeople.text intValue];
-}
-
-- (IBAction)finishedEnteringNames:(id)sender {
-    
-}
-
-- (IBAction)nextName:(id)sender {
-    [self makeNames: current upTo: max];
-    
-}
-
-- (void) makeNames: (int) counter upTo: (int) max {
-    
-    if (counter == max) {
-        [_enterNextName removeTarget:self action:@selector(nextName:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [_enterNextName addTarget: self action: @selector(finishedEnteringNames:) forControlEvents: UIControlEventTouchUpInside];
-        
-        
-        
-    } else {
-        names[counter] = _personName.text;
-        
-        NSMutableString *personNumber = [NSMutableString stringWithFormat:@"%d",counter + 1];
-        NSMutableString *nameLabel = [NSMutableString stringWithString:@"Please enter the name of person "];
-        [nameLabel appendString: personNumber];
-        _personName.text = [NSMutableString stringWithFormat: @""];
-        _namePrompt.text = nameLabel;
-        current += 1;
+- (void)useCamera:(id)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType =
+        UIImagePickerControllerSourceTypeCamera;
+        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+        imagePicker.allowsEditing = NO;
+        [self presentViewController:imagePicker animated:YES completion:nil];
+        _newMedia = YES;
     }
 }
 
-- (void)useCamera:(id)sender {
-        if ([UIImagePickerController isSourceTypeAvailable:
-             UIImagePickerControllerSourceTypeCamera])
-        {
-            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-            imagePicker.delegate = self;
-            imagePicker.sourceType =
-            UIImagePickerControllerSourceTypeCamera;
-            imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
-            imagePicker.allowsEditing = NO;
-            [self presentViewController:imagePicker animated:YES completion:nil];
-            _newMedia = YES;
-        }
-}
-
 - (void)useCameraRoll:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypeSavedPhotosAlbum])
     {
-        if ([UIImagePickerController isSourceTypeAvailable:
-             UIImagePickerControllerSourceTypeSavedPhotosAlbum])
-        {
-            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-            imagePicker.delegate = self;
-            imagePicker.sourceType =
-            UIImagePickerControllerSourceTypePhotoLibrary;
-            imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
-            imagePicker.allowsEditing = NO;
-            [self presentViewController:imagePicker animated:YES completion:nil];
-            _newMedia = NO;
-        }
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType =
+        UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+        imagePicker.allowsEditing = NO;
+        [self presentViewController:imagePicker animated:YES completion:nil];
+        _newMedia = NO;
+    }
 }
 
 #pragma mark -
@@ -125,7 +79,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         NSLog(@"item=%@, price=%@", [line objectAtIndex: 0], [line objectAtIndex: 1]);
     }
     NSLog(@"width=%f height=%f", filteredImage.size.width, filteredImage.size.height);
-
+    
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         
@@ -165,9 +119,24 @@ finishedSavingWithError:(NSError *)error
 }
 
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
+/*
+#pragma mark - Navigation
 
-
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Picture View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="PictureViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -22,12 +22,12 @@
                                 <items>
                                     <barButtonItem title=" Camera Roll" id="zqW-mu-WfR">
                                         <connections>
-                                            <action selector="useCameraRoll:" destination="vXZ-lx-hvc" id="d2V-K4-EaK"/>
+                                            <action selector="useCameraRoll:" destination="vXZ-lx-hvc" id="YK2-XT-p6o"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Take Picture!" width="287" id="kDN-kM-IS3">
                                         <connections>
-                                            <action selector="useCamera:" destination="vXZ-lx-hvc" id="swi-Ia-jrN"/>
+                                            <action selector="useCamera:" destination="vXZ-lx-hvc" id="eyn-tZ-dlV"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" id="YPy-4j-bTs"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="imageView" destination="ccP-jg-G3g" id="P8F-Ia-VEi"/>
+                        <outlet property="imageView" destination="ccP-jg-G3g" id="pPV-Db-bzw"/>
                         <outlet property="toolBar" destination="g7B-fz-OL5" id="uz7-jd-DsI"/>
                     </connections>
                 </viewController>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="914" y="286"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="nao-91-fmC">
             <objects>
-                <viewController id="GKW-XN-IVU" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="GKW-XN-IVU" customClass="TableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j3m-rR-mhN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,8 +72,8 @@
                     <connections>
                         <outlet property="itemList" destination="gGR-n8-wHP" id="sQE-wR-ccm"/>
                         <outlet property="itemListTitle" destination="vrW-Zf-BJv" id="bVC-aZ-73O"/>
-                        <outlet property="tableTitle" destination="vrW-Zf-BJv" id="WZw-aG-esY"/>
-                        <outlet property="tableView" destination="gGR-n8-wHP" id="fXO-fo-5bv"/>
+                        <outlet property="tableTitle" destination="vrW-Zf-BJv" id="451-bc-kbm"/>
+                        <outlet property="tableView" destination="gGR-n8-wHP" id="WGV-u8-29D"/>
                         <outlet property="titleBar" destination="vrW-Zf-BJv" id="Zo7-GU-4IY"/>
                     </connections>
                 </viewController>
@@ -84,7 +84,7 @@
         <!--Title-->
         <scene sceneID="itY-IE-xOL">
             <objects>
-                <viewController id="ef7-cm-Gsw" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="ef7-cm-Gsw" customClass="PeopleNumberViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MV0-N7-0GG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,6 +95,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the number of people:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nlc-jW-A0B">
+                                <rect key="frame" x="23" y="86" width="275" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WMN-dB-HvT">
                                 <rect key="frame" x="144" y="178" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,22 +110,15 @@
                                 </state>
                                 <connections>
                                     <action selector="maxNumber:" destination="ef7-cm-Gsw" eventType="touchUpInside" id="aBg-df-XCr"/>
-                                    <segue destination="OYt-Ts-ECC" kind="push" id="88R-Nv-ZGf"/>
+                                    <segue destination="OYt-Ts-ECC" kind="push" id="bM0-8s-Y3G"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the number of people:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nlc-jW-A0B">
-                                <rect key="frame" x="23" y="86" width="275" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="8Rb-Lx-tud"/>
                     <connections>
-                        <outlet property="numberOfPeople" destination="qud-1B-sw1" id="lYr-9K-Udz"/>
+                        <outlet property="numberOfPeople" destination="qud-1B-sw1" id="dvH-uG-Gct"/>
                         <outlet property="toNameInputButtom" destination="WMN-dB-HvT" id="HIu-xc-WIf"/>
                     </connections>
                 </viewController>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="474" y="286"/>
         </scene>
-        <!--View Controller-->
+        <!--Name Enter View Controller-->
         <scene sceneID="wyI-XR-pGA">
             <objects>
-                <viewController id="OYt-Ts-ECC" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="OYt-Ts-ECC" customClass="NameEnterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="blc-3R-EEK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,7 +154,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextName:" destination="OYt-Ts-ECC" eventType="touchUpInside" id="zoT-vi-fbm"/>
+                                    <action selector="nextName:" destination="OYt-Ts-ECC" eventType="touchUpInside" id="CKt-Ul-Wok"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,19 +162,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="oNa-76-q4P"/>
                     <connections>
-                        <outlet property="enterNextName" destination="wz5-a6-BPZ" id="bvT-gu-CHt"/>
-                        <outlet property="namePrompt" destination="lTF-fw-sR4" id="UKs-Bz-TEM"/>
-                        <outlet property="personName" destination="KS4-f7-XJB" id="mFq-Ry-UxX"/>
+                        <outlet property="enterNextName" destination="wz5-a6-BPZ" id="GZy-J3-Mib"/>
+                        <outlet property="namePrompt" destination="lTF-fw-sR4" id="Pua-MP-LIA"/>
+                        <outlet property="numberOfPeople" destination="KS4-f7-XJB" id="ipg-Mr-72w"/>
+                        <outlet property="personName" destination="KS4-f7-XJB" id="hv6-bq-nXe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tP-hf-tFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="474" y="1062"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture Prompt View Controller-->
         <scene sceneID="Kn5-A4-fYk">
             <objects>
-                <viewController id="ySB-2o-agr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PicturePromptViewController" id="ySB-2o-agr" customClass="PicturePromptViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="szN-Iy-x2F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,6 +194,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="picturePromptButton:" destination="ySB-2o-agr" eventType="touchUpInside" id="jf8-BZ-G5V"/>
                                     <segue destination="vXZ-lx-hvc" kind="push" id="oPY-3X-Bhl"/>
                                 </connections>
                             </button>
@@ -200,6 +202,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="pQ9-bP-GgM"/>
+                    <connections>
+                        <outlet property="picturePromptLabel" destination="zWC-Vw-FzD" id="VsV-XW-LEl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yGQ-c1-e0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

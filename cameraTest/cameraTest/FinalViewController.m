@@ -94,6 +94,14 @@
      }];
 }
 
+- (IBAction)resetAll:(id)sender {
+    receipt = NULL;
+    filteredReceipt = NULL;
+    users = NULL;
+    maxUsers = 0;
+    currentUser = 1;
+}
+
 - (void) doVenmoRequest {
     for(int i = 0; i < [users count]; i++) {
         if(getUserVenmo(users, i)) {

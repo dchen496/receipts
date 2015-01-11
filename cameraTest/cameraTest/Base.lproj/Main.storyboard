@@ -67,11 +67,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" id="W2K-xR-Bot">
+                                <rect key="frame" x="142" y="309" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.030894902045226602" green="0.59833561948430491" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="filteredImageView" destination="OMl-Pn-47c" id="BrZ-90-2nq"/>
+                        <outlet property="spinner" destination="W2K-xR-Bot" id="2LE-7K-pzn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwR-PC-YQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
